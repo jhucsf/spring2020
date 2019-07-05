@@ -1,0 +1,4 @@
+coursename: "601.229"
+baseurl: "/fall2019"
+markdown: kramdown
+highlighter: rouge
