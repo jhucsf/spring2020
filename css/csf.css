@@ -6,6 +6,26 @@ a:visited{
 	color: #1f386b;
 }
 
+table {
+	border-collapse: collapse;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin: 32px auto;
+}
+
+th {
+	border-bottom: 1px solid black;
+	text-align: left;
+}
+
+th, td {
+	padding: 4px 8px;
+}
+
+tr:nth-child(even) {
+	background: #eee;
+}
+
 #content {
 	margin: 0 auto;
 	max-width: 60em;
