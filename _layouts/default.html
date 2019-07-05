@@ -3,29 +3,32 @@
 <html>
 
 <head>
-	<title>{{page.title}}</title>
+	<title>{{site.coursename}}: {{page.title}}</title>
 	<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/csf.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="{{site.baseurl}}/js/csf.js"></script>
 </head>
 
 <body>
-	<!-- navbar -->
-	<ul id="navbar">
-		<li class="home"><a href="{{site.baseurl}}/index.html">Home</a></li>
-		<li class="syllabus"><a href="{{site.baseurl}}/syllabus.html">Syllabus</a></li>
-		<li class="schedule"><a href="{{site.baseurl}}/schedule.html">Schedule</a></li>
-		<li class="resources"><a href="{{site.baseurl}}/resources.html">Resources</a></li>
-	</ul>
+	<div id="content">
+		<ul id="navbar">
+			<li class="home"><a href="{{site.baseurl}}/index.html">Home</a></li>
+			<li class="syllabus"><a href="{{site.baseurl}}/syllabus.html">Syllabus</a></li>
+			<li class="schedule"><a href="{{site.baseurl}}/schedule.html">Schedule</a></li>
+			<li class="resources"><a href="{{site.baseurl}}/resources.html">Resources</a></li>
+		</ul>
 
-	{{content}}
+		<div id="pageTitle">{{site.coursename}}: {{page.title}}</div>
 
-	<script>
-		$(document).ready(function() {
-			csf.pageCategory = "{{page.category}}";
-			csf.onLoad();
-		});
-	</script>
+		{{content}}
+
+		<script>
+			$(document).ready(function() {
+				csf.pageCategory = "{{page.category}}";
+				csf.onLoad();
+			});
+		</script>
+	</div>
 </body>
 
 </html>
