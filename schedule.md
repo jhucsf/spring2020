@@ -10,8 +10,8 @@ Unless otherwise indicated, readings are from Bryant and O'Hallaron, [Computer S
 
 The links to lecture notes are provided for reference.  In general, there is no guarantee that they will be posted before class, or that their content will not change.
 
-Date | Topic | Reading
----- | ----- | -------
+Date | Topic | Reading | Homework due | Lab due
+---- | ----- | ------- | ------------ | -------
 Fri, Aug 30 | Course overview, binary data representation review | 1.1–1.9
 Mon, Sep 2 | *Labor day, no class* | —
 Wed, Sep 4 | Data representation, addresses | 2.1
