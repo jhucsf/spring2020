@@ -71,12 +71,13 @@ Requirements and specifications:
 * All values should be represented using signed 64-bit integers (use the **long** C data type)
 * All operators should be evaluated using the usual C semantics for operations on **long** values
 * The operand stack is limited to 20 values
+* If the program successfully evaluates the input expression, it should exit with a zero (0) exit code
 
 If the expression is invalid, or if the maximum stack depth is exceeded, the program must print a single line of the form
 
 > <pre>Error: <i>msg</i></pre>
 
-where <code><i>msg</i></code> is a message describing the error.
+where <code><i>msg</i></code> is a message describing the error.  The program should also exit immediately with a nonzero exit code (after printing the error message) if an error occurs.
 
 ## System-level tests
 
