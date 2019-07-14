@@ -90,6 +90,13 @@ tr:nth-child(even) {
 	display: block;
 }
 
+#headerSep {
+	height: 2px;
+	border-width: 0;
+	color: #1f386b;
+	background-color: #1f386b;
+}
+
 /*
 vim:ts=2:
 */
