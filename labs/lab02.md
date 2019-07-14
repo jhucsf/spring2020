@@ -45,3 +45,43 @@ Item | Action
 5    | Push 5 onto stack
 +    | Pop operands 5 and 4, add them, push sum 9
 \*   | Pop operands 9 and 3, multiply them, push product 27
+
+When any valid postfix expression is evaluated, the stack will have a single result value when the end of the expression is reached.  Also, valid postfix expressions will guarantee that operand values are always available on the stack when an operator is processed.  Here are some examples of *invalid* postfix expressions:
+
+Expression | Why invalid
+---------- | -----------
+10 2 - *   | Only one operand value is on stack when operator \* is processed
+2 3 + 4    | Two operand values are on stack when end of expression is reached
+
+# Tasks
+
+This section explains the specific tasks that you will need to complete.
+
+## Postfix calculator in C
+
+The first task is to implement a C version of the postfix calculator.  The C version should take a single command line argument specifying a postfix expression, and (assuming the postfix expression is valid) print a single line of output of the form
+
+> <pre>Result is: <i>N</i></pre>
+
+where <code><i>N</i></code> is the result of evaluating the expression.
+
+Requirements and specifications:
+
+* The expression will consist of positive integer literals and operators (+, -, \*, and /)
+* All values should be represented using signed 64-bit integers (use the **long** C data type)
+* All operators should be evaluated using the usual C semantics for operations on **long** values
+* The operand stack is limited to 20 values
+
+If the expression is invalid, or if the maximum stack depth is exceeded, the program must print a single line of the form
+
+> <pre>Error: <i>msg</i></pre>
+
+where <code><i>msg</i></code> is a message describing the error.
+
+## System-level tests
+
+Yeah.
+
+## Postfix calculator in assembly
+
+Yeah.
