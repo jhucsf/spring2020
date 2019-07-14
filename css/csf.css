@@ -28,7 +28,7 @@ tr:nth-child(even) {
 
 #content {
 	margin: 0 auto;
-	max-width: 60em;
+	max-width: 48em;
 }
 
 #pageTitle {
@@ -40,8 +40,9 @@ tr:nth-child(even) {
 
 #navbar {
 	list-style-type: none;
-	margin: 0;
+	margin: 2em 0 0 0;
 	padding: 0;
+	float: left;
 }
 
 #navbar li {
@@ -73,15 +74,20 @@ tr:nth-child(even) {
 	background: #eee;
 }
 
-#navbar::after {
-	content: "";
-	clear: both;
-	display: block;
-}
-
 #navbar li.active a {
 	background: #1f386b;
 	color: white;
+}
+
+#logo {
+	margin: 2em 0 0 0;
+	float: right;
+}
+
+#logo::after {
+	content: "";
+	clear: both;
+	display: block;
 }
 
 /*
