@@ -16,7 +16,11 @@ The grading breakdown is:
 * System tests (for both versions): 10%
 * Unit tests for assembly language version: 10%
 
+FIXME: figure out how to incorporate design and coding style into grading breakdown.
+
 This is a challenging assignment.  Don't wait until the last minute to start it!  As usual, ask questions using Piazza, come to office hours, etc.
+
+TODO: should probably say something about what it means to write assembly language code, with a pointer to Step 4 for more details.
 
 When you are done with this assignment you will have proved yourself capable of writing nontrivial x86-64 assembly code.  This is a foundational skill for hacking on operating systems and compilers, understanding security vulnerabilities such as buffer overflows, and generally becoming one with the machine.
 
@@ -57,7 +61,7 @@ Expression | Why invalid
 
 This section explains the specific tasks that you will need to complete.
 
-Note: these steps aren't really meant to be done strictly sequentially.  For example, Steps 1 and 2 can and should be done at the same time.  Steps 1–3 should probably be done before Steps 4 and 5, though.
+Note: these steps aren't meant to be done strictly sequentially.  For example, Steps 1 and 2 can and should be done at the same time.  Steps 1–3 should probably be done before Steps 4 and 5, though.
 
 ## Step 1: Postfix calculator in C
 
@@ -110,6 +114,21 @@ the full error message might be something like `Error: multiple values left on s
 
 *Make simplifying assumptions.* Since you're using the C version of the program as a template for the assembly version, you should try to write your C functions in a way that will be easy to duplicate in assembly language.  For example, use the `long` data type (64 bit signed integer) for all data values except for the characters in the expression string.  Use pointers as necessary to allow a called function to modify a variable whose address is passed as an argument.
 
+Here is a suggested set of functions to write, which will be reasonably straightforward to translate to assembly language:
+
+```c
+long isSpace(long c);
+long isDigit(long c);
+const char *skipws(const char *s);
+long tokenType(const char *s);
+const char *consumeInt(const char *s, long *pVal);
+void stackPush(long stack[], long *pCount, long val);
+long stackPop(long stack[], long *pCount);
+long eval(const char *expr);
+```
+
+Note that you are not required to implement these functions, but you may if you wish.
+
 ## Step 2: Unit tests for C postfix calculator
 
 As you develop each function in the C postfix calculator program, write unit tests for it.  The source file **cTests.c** is a starting point for writing unit tests.  The unit test code will use the same unit testing framework as [Assignment 1](assign01.html).
@@ -127,7 +146,7 @@ In addition to testing valid inputs, you should also test invalid inputs.  One c
 ```c
 expectedExit = 1; /* about to test code that is supposed to call exit */
 
-if (sigsetjmp(fatalBuf, 1) == 0) {
+if (sigsetjmp(exitBuf, 1) == 0) {
   eval("2 3 + 4");    /* invalid postfix expression */
   FATAL("eval function failed to exit for invalid expression");
 } else {
@@ -135,12 +154,72 @@ if (sigsetjmp(fatalBuf, 1) == 0) {
 }
 ```
 
-This approach works because **cTests.c** has its own version of the `exit` function which uses `siglongjmp` to transfer control back to the call to `sigsetjmp` but return with a nonzero return code.  The `sigsetjmp` and `siglongjmp` functions are essentially primitive forms of `try`/`catch` and `throw` (respectively).  You can read more about these functions in Chapter 8 of the textbook.)  (Note that the `FATAL` macro, which causes a unit test to immediately fail, also takes advantage of `sigsetjmp`/`siglongjmp`.
+This approach works because **cTests.c** has its own version of the `exit` function which uses `siglongjmp` to transfer control back to the call to `sigsetjmp` but return with a nonzero return code.  The `sigsetjmp` and `siglongjmp` functions are essentially primitive forms of `try`/`catch` and `throw` (respectively).  You can read more about these functions in Chapter 8 of the textbook.  (Note that the `FATAL` macro, which causes a unit test to immediately fail, also takes advantage of `sigsetjmp`/`siglongjmp`.)
 
 ## Step 3: System-level tests
 
-Yeah.
+In addition to writing unit tests to test the individual functions in the C version of the postfix calculator, program, you should also write "system"-level tests to test the overall program on various inputs.  Add these tests to **sysTests.sh**.  This script provides two testing functions:
 
-## Postfix calculator in assembly
+* `expect` runs the calculator program on a valid postfix expression and tests that the correct result is computed
+* `expect_error` runs the calculator program on an invalid postfix expression and tests that an error message is printed
 
-Yeah.
+A few example tests are provided: you should add your own tests.  As with the unit tests, try to think of corner cases in your code, and add tests to exercise them.
+
+To run the system tests on your C postfix calculator implementation, run the command
+
+> <code class="cmd">./sysTests.sh ./cPostfixCalc</code>
+
+## Step 4: Postfix calculator in assembly
+
+In this step, you will write an x86-64 assembly language version of the postfix calculator.  Use the source files **asmPostfixCalcMain.S** and **asmPostfixCalcFuncs.S** for the `main` function and implementation functions, respectively.  Follow the design of the C implementation you wrote in Step 2.
+
+Note that the **.S** file extension means "preprocessed assembly", so you can use C-style comments in your assembly code.
+
+To assemble and link the assembly language program, run the command <code class="cmd">make asmPostfixCalc</code>.  Run it exactly the same way as the C version, e.g.
+
+> <code class="cmd">./asmPostfixCalc '1 2 +'</code>
+
+TODO: requirements, such as don't just let gcc generate assembly and pretend you wrote it, what C library functions are and aren't allowed, etc.
+
+### Hints for Step 4
+
+This step is the challenging one!  Here are some hints to help you make progress.
+
+*Start with the simplest functions.*  If you are implementing the functions suggested in Step 2, you might start by implementing the `isSpace` function, which should return 1 if its argument is space (`' '`) or tab (`'\t'`), and return 0 otherwise.  The `isDigit` function is also a good place to start.
+
+*Develop the unit tests first.* It will make your task *vastly* easier to develop a function and its unit test(s) at the same time.  Once you get each individual function to work correctly, you can tie them together into a complete program.  See Step 5 below for more details on how to write unit tests for your assembly functions.
+
+*Follow the calling conventions.* Make sure your assembly language functions correctly adhere to the x86-64 calling conventions.  By doing so,
+
+* You will be able to call C library functions (such as `printf`) as needed
+* You will be able to write your unit tests in C (i.e., you can make calls to your assembly language functions from the unit test code written in C)
+
+Make sure that when your assembly code calls a function, the stack pointer (`%rsp`) contains an address that is a multiple of 16.  Because a call instruction pushes the current program counter value (`%rip`) onto the stack, on entry to a function, the stack pointer is misaligned by 8 bytes (the size of a code address), so each of your functions will need to adjust `%rsp` by *N* bytes such that *N* mod 16 = 8.  I.e., subtract 8 bytes, or 24 bytes, or 40 bytes, etc.
+
+*Use registers for local variables.*  For most local variables in your code, you can use a register as the storage location.  The callee-saved registers (`%rbx`, `%rbp`, `%r12`–`%r16`) are the most straightforward to use, but you will need to save their previous contents and then restore them before returning from the function.  (The `pushq` and `popq` instructions make saving and restoring register contents easy.)  The caller-saved registers (`%r10` and `%r11`) don't need to be saved and restored, but their values aren't preserved across function calls, so they're tricker to use correctly.
+
+*Use the frame pointer to keep track of local variables in memory.*  Some variables will need to be allocated in memory.  You can allocate such variables in the stack frame of the called function.  The frame pointer register (`%rbp`) can help you easily access these variables.  A typical setup for a function which allocates variables in the stack frame would be something like
+
+```
+myFunc:
+    pushq %rbp                      /* save previous frame pointer */
+    subq $N, %rsp                   /* reserve space for local variable(s) */
+    movq %rsp, %rbp                 /* set up frame pointer */
+
+    /*
+     * implementation of function: local variables can be accessed
+     * relative to %rbp, e.g. 0(%rbp), 8(%rbp), etc.
+     */
+
+    addq $N, %rsp                   /* deallocate space for local variable(s) */
+    popq %rbp                       /* restore previous frame pointer */
+    ret
+```
+
+The code above allocates *N* bytes of memory in the stack frame for local variables: note that *N* needs to be a multiple of 16 to ensure correct stack pointer alignment.  (Think about it!)
+
+*Use `leaq` to compute addresses of local variables.* It is likely that one or more of your functions takes a pointer to a variable as a parameter.  When calling such a function, the `leaq` instruction provides a very convenient way to compute the address of a variable.  For example, let's say we want to pass the address of a local variable 8 bytes offset from the frame pointer (`%rbp`) as the first argument to a function.  We could load the address of this variable into the `%rdi` register (used for the first function argument) using the instruction
+
+```
+leaq 8(%rbp), %rdi
+```
