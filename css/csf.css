@@ -45,19 +45,33 @@ tr:nth-child(even) {
 	float: left;
 }
 
-#navbar li {
+/*
+#navbar li span.csf {
+	color: red;
+}
+*/
+
+span.csf {
+	color: #1f386b;
+	font-weight: bold;
+}
+
+#navbar li, span.csf {
 	float: left;
 	padding: 0;
 	border: 0;
 	margin: 0;
 }
 
-#navbar li a {
+#navbar li a, span.csf {
 	display: inline-block;
 	text-decoration: none;
 	margin: 0;
 	border: 0;
 	padding: 1em;
+}
+
+#navbar li a {
 	min-width: 6em;
 	text-align: center;
 }
