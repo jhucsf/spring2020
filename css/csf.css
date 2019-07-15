@@ -111,6 +111,23 @@ span.csf {
 	background-color: #1f386b;
 }
 
+code.cmd {
+	background: #222;
+	color: #8f8;
+	border: 1px solid #484;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+div.highlighter-rouge {
+	margin-left: 2em;
+	margin-right: 2em;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 0 1em;
+	border-radius: .5em;
+}
+
 /*
 vim:ts=2:
 */
