@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Lab 2: Postfix calculator"
+title: "Assignment 2: Postfix calculator"
 ---
 
 Due: *TBD*
 
 # Overview
 
-In this lab, you will implement a postfix calculator program in x86-64 assembly language.
+In this assignment, you will implement a postfix calculator program in x86-64 assembly language.
 
 The grading breakdown is:
 
