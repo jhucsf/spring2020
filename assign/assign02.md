@@ -110,7 +110,7 @@ the full error message might be something like `Error: multiple values left on s
 
 ### Hints for Step 1
 
-*Think about the C version as a template for the assembly version.*  The purpose of the C version of the program is to help you think about the problem and discover a good way to decompose it into functions.  When you write the assembly language version of the program, you can just hand-translate each C function into an equivalent assembly language function.
+*Think about the C version as a template for the assembly version.*  The purpose of the C version of the program is to help you think about the problem and discover a good way to decompose it into functions.  When you write the assembly language version of the program, you can hand-translate each C function into an equivalent assembly language function.
 
 *Make simplifying assumptions.* Since you're using the C version of the program as a template for the assembly version, you should try to write your C functions in a way that will be easy to duplicate in assembly language.  For example, use the `long` data type (64 bit signed integer) for all data values except for the characters in the expression string.  Use pointers as necessary to allow a called function to modify a variable whose address is passed as an argument.
 
@@ -127,7 +127,7 @@ long stackPop(long stack[], long *pCount);
 long eval(const char *expr);
 ```
 
-Note that you are not required to implement these functions, but you may if you wish.
+Note that you are not required to implement these exact functions, but you may if you wish.
 
 ## Step 2: Unit tests for C postfix calculator
 
@@ -150,7 +150,7 @@ if (sigsetjmp(exitBuf, 1) == 0) {
   eval("2 3 + 4");    /* invalid postfix expression */
   FATAL("eval function failed to exit for invalid expression");
 } else {
-  printf("Good, eval properly called exit for invalid expression");
+  printf("Good, eval properly called exit for invalid expression...");
 }
 ```
 
@@ -158,12 +158,22 @@ This approach works because **cTests.c** has its own version of the `exit` funct
 
 ## Step 3: System-level tests
 
-In addition to writing unit tests to test the individual functions in the C version of the postfix calculator, program, you should also write "system"-level tests to test the overall program on various inputs.  Add these tests to **sysTests.sh**.  This script provides two testing functions:
+In addition to writing unit tests to test the individual functions in the C version of the postfix calculator, program, you should also write "system"-level tests to test the overall program on various inputs.  Add these tests to **sysTests.sh**.  This script supports two kinds of tests:
 
 * `expect` runs the calculator program on a valid postfix expression and tests that the correct result is computed
 * `expect_error` runs the calculator program on an invalid postfix expression and tests that an error message is printed
 
-A few example tests are provided: you should add your own tests.  As with the unit tests, try to think of corner cases in your code, and add tests to exercise them.
+A few example tests are provided:
+
+```bash
+expect 5 '2 3 +'
+expect 42 '6 7 *'
+expect 42 '6 6 6 6 6 6 6 + + + + + +'
+expect_error '2 2'
+expect_error '1 *'
+```
+
+You should add your own tests.  As with the unit tests, try to think of corner cases in your code, and add tests to exercise them.
 
 To run the system tests on your C postfix calculator implementation, run the command
 
