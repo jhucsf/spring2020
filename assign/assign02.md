@@ -35,7 +35,7 @@ In *postfix notation* the operator comes *after* the operands, so adding 2 and 3
 
 Postfix notation has some advantages over infix notation: for example, parentheses are not necessary, since the order of operations is never ambiguous.  Postfix notation is also called [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).  It is famously used in [HP calculators](https://en.wikipedia.org/wiki/HP_calculators) and programming languages such as [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)) and [PostScript](https://en.wikipedia.org/wiki/PostScript).
 
-Evaluating postfix expressions using a program is very simple.  The program maintains a stack of values.  The items (operands and operators) in the expression are processed in order.  Operands (e.g., literal values) are pushed onto the stack.  When an operator is encountered, its operand values are popped from the stack, the operator is applied to the operand values, and the result value is pushed onto the stack.  For example, consider the postfix expression
+Evaluating postfix expressions using a program is very simple.  The program maintains a stack of values (initially empty).  The items (operands and operators) in the expression are processed in order.  Operands (e.g., literal values) are pushed onto the stack.  When an operator is encountered, its operand values are popped from the stack, the operator is applied to the operand values, and the result value is pushed onto the stack.  For example, consider the postfix expression
 
 > `3 4 5 + *`
 
@@ -96,6 +96,7 @@ Running the command <code class="cmd">make cPostfixCalc</code> will compile the 
 Invocation | Expected output
 ---------- | ---------------
 <code class="cmd">./cPostfixCalc '1 1 +'</code> | `Result is: 2`
+<code class="cmd">./cPostfixCalc '7 2 -'</code> | `Result is: 5`
 <code class="cmd">./cPostfixCalc '3 4 5 + &#42;'</code> | `Result is: 27`
 <code class="cmd">./cPostfixCalc '17 3 /'</code> | `Result is: 5`
 <code class="cmd">./cPostfixCalc '3 10 /'</code> | `Result is: -7`
