@@ -182,7 +182,7 @@ To run the system tests on your C postfix calculator implementation, run the com
 
 ## Step 4: Postfix calculator in assembly
 
-In this step, you will write an x86-64 assembly language version of the postfix calculator.  Use the source files **asmPostfixCalcMain.S** and **asmPostfixCalcFuncs.S** for the `main` function and implementation functions, respectively.  Follow the design of the C implementation you wrote in Step 2.
+In this step, you will write an x86-64 assembly language version of the postfix calculator.  Use the source files **asmPostfixCalcMain.S** and **asmPostfixCalcFuncs.S** for the `main` function and implementation functions, respectively.  Follow the design of the C implementation you wrote in [Step 1](#step-1-postfix-calculator-in-c).
 
 Note that the **.S** file extension means "preprocessed assembly", so you can use C-style comments in your assembly code.  You can also use `#define` to define named constants, just as you would in a C program.
 
@@ -192,7 +192,7 @@ To assemble and link the assembly language program, run the command <code class=
 
 ### Writing assembly code
 
-The purpose of this assignment is for you to learn how to write assembly code by hand.  So, using the compiler to compile C to assembly code, and then pretending you wrote the assembly code, is *not* a legitimate way to complete this assignment.
+The purpose of this assignment is for you to learn how to write assembly code by hand.  So, using the compiler to compile C to assembly code, and then pretending you wrote the assembly code, is *not* a legitimate way to complete this step.
 
 You may inspect compiler-generated assembly code as a learning tool, but you should do so sparingly, and you should *never* directly copy any compiler-generated code into your assembly source files.
 
@@ -200,11 +200,11 @@ You may inspect compiler-generated assembly code as a learning tool, but you sho
 
 This step is challenging!  Here are some hints to help you make progress.
 
-*Start with the simplest functions.*  If you are implementing the functions suggested in Step 2, you might start by implementing the `isSpace` function, which should return 1 if its argument is space (`' '`) or tab (`'\t'`), and return 0 otherwise.  The `isDigit` function is also a good place to start.
+*Start with the simplest functions.*  If you are implementing the functions suggested in [Step 1](#step-1-postfix-calculator-in-c), you might start by implementing the `isSpace` function, which should return 1 if its argument is space (`' '`) or tab (`'\t'`), and return 0 otherwise.  The `isDigit` function is also a good place to start.
 
 *Write the unit tests as you implement your functions.* Your job will be *vastly* easier if you develop each function and its unit test(s) at the same time.  You will find that unit tests allow you to test and debug each function in isolation, and free you from having to worry unnecessarily about interactions with other functions.
 
-Once you get all of the individual functions to work correctly, you can tie them together into a complete program.  See Step 5 below for more details on how to write unit tests for your assembly functions.
+Once you get all of the individual functions to work correctly, you can tie them together into a complete program.  See [Step 5](#step-5-unit-tests-for-assembly-postfix-calculator) below for more details on how to write unit tests for your assembly functions.
 
 *Follow the calling conventions.* Make sure your assembly language functions correctly adhere to the x86-64 calling conventions.  By doing so,
 
@@ -248,3 +248,5 @@ In the source file **asmTests.c**, implement unit tests for the functions of the
 You will need to add function prototypes for your assembly functions.  If your assembly language calculator implementation follows the design of the C version exactly, you can use the same function prototypes (i.e., you can copy them from **cPostfixCalc.h**).
 
 Even better, if your assembly functions are equivalent to your C functions, *you can copy the actual tests*.  So, the unit tests for your assembly functions will likely be similar (or even identical) to the unit tests for your C functions.
+
+Note that the technique for testing functions on invalid input explained in [Step 2](#step-2-unit-tests-for-c-postfix-calculator) can also be used in the unit tests for your assembly language functions.
