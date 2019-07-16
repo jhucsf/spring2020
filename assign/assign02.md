@@ -11,12 +11,11 @@ In this assignment, you will implement a postfix calculator program in x86-64 as
 
 The grading breakdown is:
 
-* C version of postfix calculator: 15%
-* Assembly version of postfix calculator: 85%
+* C version of postfix calculator: 10%
+* Assembly version of postfix calculator: 60%
+* Unit tests (for both versions): 10%
 * System tests (for both versions): 10%
-* Unit tests for assembly language version: 10%
-
-FIXME: figure out how to incorporate design and coding style into grading breakdown.
+* Design and coding style (for both versions): 10%
 
 This is a challenging assignment.  Don't wait until the last minute to start it!  As usual, ask questions using Piazza, come to office hours, etc.
 
