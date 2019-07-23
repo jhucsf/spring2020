@@ -19,7 +19,7 @@ The grading breakdown is:
 
 This is a challenging assignment.  Don't wait until the last minute to start it!  As usual, ask questions using Piazza, come to office hours, etc.
 
-**Important**: When you write assembly code, you must *actually* write assembly code. Using the compiler to generate assembly code is *not* allowed.  See <a href="#step-4-postfix-calculator-in-assembly">Step 4</a> for more details.
+**Important**: When you write assembly code, you must *actually* write assembly code. Using the compiler to generate assembly code is *not* allowed.  See <a href="#task-4-postfix-calculator-in-assembly">Task 4</a> for more details.
 
 When you are done with this assignment you will have proved yourself capable of writing nontrivial x86-64 assembly code.  This is a foundational skill for hacking on operating systems and compilers, understanding security vulnerabilities such as buffer overflows, and generally becoming one with the machine.
 
@@ -60,9 +60,9 @@ Expression | Why invalid
 
 This section explains the specific tasks that you will need to complete.
 
-Note: these steps aren't meant to be done strictly sequentially.  For example, Steps 1 and 2 can and should be done at the same time.  Steps 1–3 should probably be done before Steps 4 and 5, though.
+Note: these tasks aren't meant to be done strictly sequentially.  For example, Tasks 1 and 2 can and should be done at the same time.  Tasks 1–3 should probably be done before Tasks 4 and 5, though.
 
-## Step 1: Postfix calculator in C
+## Task 1: Postfix calculator in C
 
 The first task is to implement a C version of the postfix calculator.  The C version should take a single command line argument specifying a postfix expression, and (assuming the postfix expression is valid) print a single line of output of the form
 
@@ -110,7 +110,7 @@ Note that in the cases where the postfix expression is invalid, the specific out
 
 the full error message might be something like `Error: multiple values left on stack`.
 
-### Hints for Step 1
+### Hints for Task 1
 
 *Think about the C version as a template for the assembly version.*  The purpose of the C version of the program is to help you think about the problem and discover a good way to decompose it into functions.  When you write the assembly language version of the program, you can hand-translate each C function into an equivalent assembly language function.
 
@@ -131,7 +131,7 @@ long eval(const char *expr);
 
 Note that you are not required to implement these exact functions, but you may if you wish.
 
-## Step 2: Unit tests for C postfix calculator
+## Task 2: Unit tests for C postfix calculator
 
 As you develop each function in the C postfix calculator program, write unit tests for it.  The source file **cTests.c** is a starting point for writing unit tests.  The unit test code will use the same unit testing framework as [Assignment 1](assign01.html).
 
@@ -139,7 +139,7 @@ To compile the C version of the unit tests, run the command <code class="cmd">ma
 
 > <code class="cmd">./cTests</code>
 
-### Hints for Step 2
+### Hints for Task 2
 
 Test thoroughly!  Try to exercise the corner cases in your code.
 
@@ -158,7 +158,7 @@ if (sigsetjmp(exitBuf, 1) == 0) {
 
 This approach works because **cTests.c** has its own version of the `exit` function which uses `siglongjmp` to transfer control back to the call to `sigsetjmp` but return with a nonzero return code.  The `sigsetjmp` and `siglongjmp` functions are essentially primitive forms of `try`/`catch` and `throw` (respectively).  You can read more about these functions in Chapter 8 of the textbook.  (Note that the `FATAL` macro, which causes a unit test to immediately fail, also takes advantage of `sigsetjmp`/`siglongjmp`.)
 
-## Step 3: System-level tests
+## Task 3: System-level tests
 
 In addition to writing unit tests to test the individual functions in the C version of the postfix calculator, program, you should also write "system"-level tests to test the overall program on various inputs.  Add these tests to **sysTests.sh**.  This script supports two kinds of tests:
 
@@ -181,9 +181,9 @@ To run the system tests on your C postfix calculator implementation, run the com
 
 > <code class="cmd">./sysTests.sh ./cPostfixCalc</code>
 
-## Step 4: Postfix calculator in assembly
+## Task 4: Postfix calculator in assembly
 
-In this step, you will write an x86-64 assembly language version of the postfix calculator.  Use the source files **asmPostfixCalcMain.S** and **asmPostfixCalcFuncs.S** for the `main` function and implementation functions, respectively.  Follow the design of the C implementation you wrote in [Step 1](#step-1-postfix-calculator-in-c).
+In this task, you will write an x86-64 assembly language version of the postfix calculator.  Use the source files **asmPostfixCalcMain.S** and **asmPostfixCalcFuncs.S** for the `main` function and implementation functions, respectively.  Follow the design of the C implementation you wrote in [Task 1](#task-1-postfix-calculator-in-c).
 
 Note that the **.S** file extension means "preprocessed assembly", so you can use C-style comments in your assembly code.  You can also use `#define` to define named constants, just as you would in a C program.
 
@@ -193,19 +193,19 @@ To assemble and link the assembly language program, run the command <code class=
 
 ### Writing assembly code
 
-The purpose of this assignment is for you to learn how to write assembly code by hand.  So, using the compiler to compile C to assembly code, and then pretending you wrote the assembly code, is *not* a legitimate way to complete this step.
+The purpose of this assignment is for you to learn how to write assembly code by hand.  So, using the compiler to compile C to assembly code, and then pretending you wrote the assembly code, is *not* a legitimate way to complete this task.
 
 You may inspect compiler-generated assembly code as a learning tool, but you should do so sparingly, and you should *never* directly copy any compiler-generated code into your assembly source files.
 
-### Hints for Step 4
+### Hints for Task 4
 
-This step is challenging!  Here are some hints to help you make progress.
+This task is challenging!  Here are some hints to help you make progress.
 
-*Start with the simplest functions.*  If you are implementing the functions suggested in [Step 1](#step-1-postfix-calculator-in-c), you might start by implementing the `isSpace` function, which should return 1 if its argument is space (`' '`) or tab (`'\t'`), and return 0 otherwise.  The `isDigit` function is also a good place to start.
+*Start with the simplest functions.*  If you are implementing the functions suggested in [Task 1](#task-1-postfix-calculator-in-c), you might start by implementing the `isSpace` function, which should return 1 if its argument is space (`' '`) or tab (`'\t'`), and return 0 otherwise.  The `isDigit` function is also a good place to start.
 
 *Write the unit tests as you implement your functions.* Your job will be *vastly* easier if you develop each function and its unit test(s) at the same time.  You will find that unit tests allow you to test and debug each function in isolation, and free you from having to worry unnecessarily about interactions with other functions.
 
-Once you get all of the individual functions to work correctly, you can tie them together into a complete program.  See [Step 5](#step-5-unit-tests-for-assembly-postfix-calculator) below for more details on how to write unit tests for your assembly functions.
+Once you get all of the individual functions to work correctly, you can tie them together into a complete program.  See [Task 5](#task-5-unit-tests-for-assembly-postfix-calculator) below for more details on how to write unit tests for your assembly functions.
 
 *Follow the calling conventions.* Make sure your assembly language functions correctly adhere to the x86-64 calling conventions.  By doing so,
 
@@ -242,7 +242,7 @@ The code above allocates *N* bytes of memory in the stack frame for local variab
 leaq 8(%rbp), %rdi
 ```
 
-## Step 5: Unit tests for assembly postfix calculator
+## Task 5: Unit tests for assembly postfix calculator
 
 In the source file **asmTests.c**, implement unit tests for the functions of the assembly language version of the postfix calculator.
 
@@ -250,4 +250,4 @@ You will need to add function prototypes for your assembly functions.  If your a
 
 Even better, if your assembly functions are equivalent to your C functions, *you can copy the actual tests*.  So, the unit tests for your assembly functions will likely be similar (or even identical) to the unit tests for your C functions.
 
-Note that the technique for testing functions on invalid input explained in [Step 2](#step-2-unit-tests-for-c-postfix-calculator) can also be used in the unit tests for your assembly language functions.
+Note that the technique for testing functions on invalid input explained in [Task 2](#task-2-unit-tests-for-c-postfix-calculator) can also be used in the unit tests for your assembly language functions.
