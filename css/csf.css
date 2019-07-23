@@ -117,15 +117,23 @@ code.cmd {
 	border: 1px solid #484;
 	padding-left: 3px;
 	padding-right: 3px;
+	border-radius: .25em;
 }
 
 div.highlighter-rouge {
 	margin-left: 2em;
 	margin-right: 2em;
-	background-color: #eee;
+	background-color: #ddd;
 	border: 1px solid #ccc;
 	padding: 0 1em;
-	border-radius: .5em;
+	border-radius: .25em;
+}
+
+code.highlighter-rouge {
+	border: 1px solid #888;
+	background-color: #ddd;
+	padding: 0 .25em;
+	border-radius: .25em;
 }
 
 #footer {
