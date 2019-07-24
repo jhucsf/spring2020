@@ -16,7 +16,7 @@ Any of the computers that are part of the [Ugrad net](https://support.cs.jhu.edu
 
 If you use [Ubuntu 18.04](http://releases.ubuntu.com/18.04/), or a distribution based on Ubuntu 18.04 (such as [Linux Mint 19.1](https://linuxmint.com/release.php?id=34)), then you are using the same Linux version that [Gradescope](https://www.gradescope.com/) uses to run autograding scripts.  [Fedora Workstation](https://getfedora.org/en/workstation/) is also a good option.  Make sure you get the 64 bit version of whichever distribution you run!
 
-[VirtualBox](https://www.virtualbox.org/) is a good way to run Linux if you don't want to (or can't) run Linux directly on your computer.  You'll want to allocate a reasonably-large amount of memory (2 GB minimum, 4 GB ideally) to the virtual machine.
+[VirtualBox](https://www.virtualbox.org/) is a good way to run Linux if you don't want to (or can't) run Linux directly on your computer.  In general, you can set up a Linux virtual machine by booting from the ISO installer image for the distribution you want to use.  You'll want to allocate a reasonably-large amount of RAM (2 GB minimum, 4 GB ideally) to the virtual machine, as well as adequate disk space (20 GB should be comfortable.)
 
 ## Tools
 
