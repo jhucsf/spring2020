@@ -79,3 +79,28 @@ Here are brief descriptions of the expected behavior of these functions.
 `apintAdd`: Adds the values represented by the `ApInt` instances pointed-to by the parameters `a` and `b`, and returns a pointer to an `ApInt` instance representing their sum.
 
 `apintCompare`: Compares the values represented by the `ApInt` instances pointed-to by the parameters `left` and `right`.  Returns a negative value if `left` is less that `right`, a positive value if `left` is greater than `right`, and 0 if the values are equal.
+
+# Tasks
+
+This section explains the tasks you are responsible for completing.  Note that they aren't meant to be strictly sequential!
+
+## Task 1: Determine a data representation
+
+You will need to determine a suitable data representation for `ApInt` values by specifying fields within the `ApInt` data type.
+
+The basic idea is that the numeric value of an `ApInt` instance is stored in a variable-length array of fixed-precision integer values.
+
+The representation should be reasonably space efficient.  For example, an array of `uint32_t` or `uint64_t` values, such that the bits of the overall integer value are packed into the array elements, would be a space-efficient representation, because at most some small number (63 or fewer) of bits per instance would be "wasted" (by being leading 0 bits in the array element representing the most significant chunk of the bit string.)  In contrast, representing the numeric value using hexadecimal digits stored n an array of `char` values would *not* be a space-efficient representation, since each `char` element would store one of only 16 possible values, wasting half of the bits in the array.
+
+Note that you could represent the value using an array of small (8 or 16 bit) integer elements.  However, the `apintAdd` function can be implemented more efficiently if it can operate on larger chunks of data.
+
+The `ApInt` representation should have a way of keeping track of the length of the array storing the bit string.  The idea is that `ApInt` values requiring more bits to represent will (in general) require more storage.  The functions which operate on `ApInt` values will need to know the array length of each `ApInt` instance.
+
+## Task 1: Function implementation
+
+Your main task is to implement all of the required functions as described above.
+
+
+## Task 2: Unit testing
+
+Yeah.
