@@ -20,19 +20,20 @@ If you use [Ubuntu 18.04](http://releases.ubuntu.com/18.04/), or a distribution 
 
 ## Tools
 
-Some of the tools you'll need are:
+Some of the tools you'll want to have are:
 
 * gcc
 * make
 * ruby
 * valgrind
+* git
 
 All of these are available by default on the Ugrad computers.
 
 To install on an Ubuntu-based system:
 
-> <code class="cmd">sudo apt-get install gcc make ruby valgrind</code>
+> <code class="cmd">sudo apt-get install gcc make ruby valgrind git</code>
 
 To install on a Fedora system:
 
-> <code class="cmd">sudo yum install gcc make ruby valgrind</code>
+> <code class="cmd">sudo yum install gcc make ruby valgrind git</code>
