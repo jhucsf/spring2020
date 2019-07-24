@@ -105,8 +105,9 @@ Note that as you work on the functions, you should also work on the unit tests! 
 Here are a few hints:
 
 * Use the `assert` macro to verify preconditions, postconditions, and invariants: assertions are a great way of catching logic errors in your code before they cause a crash or incorrect results
-* Foobar
+* Start with the simpler functions (such as `apintCreateFromU64` and `apintDestroy`), verify that they are working completely by writing unit tests, then move on to more complex functions (such as `apintLshiftN` and `apintAdd`)
+* Getting the `apintCreateFromHex` and `apintFormatAsHex` functions to work is an important milestone because they allow your test code to easily create and verify arbitrary large integer values
 
 ## Task 3: Unit testing
 
-Yarg.
+Foobar.
