@@ -88,7 +88,7 @@ This section explains the tasks you are responsible for completing.  Note that t
 
 You will need to determine a suitable data representation for `ApInt` values by specifying fields within the `ApInt` data type.
 
-The basic idea is that the numeric value of an `ApInt` instance is stored in a variable-length array of fixed-precision integer values.
+The basic idea is that the bit string required to represent the numeric value of an `ApInt` instance is stored in a variable-length array of fixed-precision integer values.
 
 The representation should be reasonably space efficient.  For example, an array of `uint32_t` or `uint64_t` values, such that the bits of the overall integer value are packed into the array elements, would be a space-efficient representation, because at most some small number (63 or fewer) of bits per instance would be "wasted" (by being leading 0 bits in the array element representing the most significant chunk of the bit string.)  In contrast, representing the numeric value using hexadecimal digits stored n an array of `char` values would *not* be a space-efficient representation, since each `char` element would store one of only 16 possible values, wasting half of the bits in the array.
 
