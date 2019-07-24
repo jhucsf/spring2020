@@ -96,11 +96,17 @@ Note that you could represent the value using an array of small (8 or 16 bit) in
 
 The `ApInt` representation should have a way of keeping track of the length of the array storing the bit string.  The idea is that `ApInt` values requiring more bits to represent will (in general) require more storage.  The functions which operate on `ApInt` values will need to know the array length of each `ApInt` instance.
 
-## Task 1: Function implementation
+## Task 2: Function implementation
 
 Your main task is to implement all of the required functions as described above.
 
+Note that as you work on the functions, you should also work on the unit tests!  So, this task and [Task 3](#task-3-unit-testing) should be done in parallel.
 
-## Task 2: Unit testing
+Here are a few hints:
 
-Yeah.
+* Use the `assert` macro to verify preconditions, postconditions, and invariants: assertions are a great way of catching logic errors in your code before they cause a crash or incorrect results
+* Foobar
+
+## Task 3: Unit testing
+
+Yarg.
