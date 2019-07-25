@@ -80,7 +80,7 @@ Here are brief descriptions of the expected behavior of these functions.
 
 `apintCreateFromU64`: Returns a pointer to an `ApInt` instance whose value is specified by the `val` parameter, which is a 64-bit unsigned value.
 
-`apintCreateFromHex`: Returns a pointer to an `ApInt` instance whose value is specified by the `hex` parameter, which is an arbitrary sequence of hexadecimal (base 16) digits.
+`apintCreateFromHex`: Returns a pointer to an `ApInt` instance whose value is specified by the `hex` parameter, which is an arbitrary sequence of hexadecimal (base 16) digits.  This function should accept both the lower-case letters `a` through `f` and the upper-case letters `A` through `F` as the hex digits with values 10 through 15.
 
 `apintDestroy`: Deallocates the memory used by the `ApInt` instance pointed-to by the `ap` parameter.
 
@@ -121,12 +121,80 @@ Your main task is to implement all of the required functions as described above.
 
 Note that as you work on the functions, you should also work on the unit tests!  So, this task and [Task 3](#task-3-unit-testing) should be done in parallel.
 
-Here are a few hints:
+Here are a few hints.
 
-* Use the `assert` macro to verify preconditions, postconditions, and invariants: assertions are a great way of catching logic errors in your code before they cause a crash or incorrect results
-* Start with the simpler functions (such as `apintCreateFromU64` and `apintDestroy`), verify that they are working completely by writing unit tests, then move on to more complex functions (such as `apintLshiftN` and `apintAdd`)
-* Getting the `apintCreateFromHex` and `apintFormatAsHex` functions to work is an important milestone because they allow your test code to easily create and verify arbitrary large integer values
+Use the `assert` macro to verify preconditions, postconditions, and invariants: assertions are a great way of catching logic errors in your code before they cause a crash or incorrect results
+
+Start with the simpler functions (such as `apintCreateFromU64` and `apintDestroy`), verify that they are working completely by writing unit tests, then move on to more complex functions (such as `apintLshiftN` and `apintAdd`)
+
+Getting the `apintCreateFromHex` and `apintFormatAsHex` functions to work is an important milestone because they allow your test code to easily create and verify arbitrarily large integer values
 
 ## Task 3: Unit testing
 
-Foobar.
+Whenever you develop data types and their associated operations, it is extremely important to have confidence that they behave correctly.  Unit tests are a very effective way to test the behavior of functions to make sure they meet their specfications.
+
+In this assignment, you will use a simple unit testing framework for C code called [TCTest](https://github.com/daveho/tctest).  You can read the [README](https://github.com/daveho/tctest/blob/master/README.md) and [demo program](https://github.com/daveho/tctest/blob/master/demo.c) for specific information about how it works, but if you've used unit testing frameworks such as [JUnit](https://junit.org), it should be fairly straightforward.
+
+The basic idea is to create instances of `ApInt` that can be used to test the various functions: these objects form the *test fixture*.  Then, test methods carry out function calls on the test fixture objects (potentially creating new instances of `ApInt` as intermediate results), and use assertions to check that the observed behavior matches the expected behavior.
+
+The `apintTests.c` source file contains the test program that will contain your unit tests.  Some minimal test code is provided; you should improve the tests by adding new test fixture objects and test methods.  To compile and run the test program, use the following commands:
+
+```bash
+# compile the tests
+make depend
+make apintTests
+
+# run the tests
+./apintTests
+```
+
+Note that the command <code class="cmd">./apintTests</code> runs all of the test functions.  You can run a specific test function by specifying its name as a command line argument: for example,
+
+```bash
+./apintTests testCreateFromU64
+```
+
+When you run the test program, you will see output indicating which tests passed and failed.  A test will fail if
+
+* a test assertion (using the `ASSERT` macro) fails
+* a C language assertion (using the `assert` macro) fails
+* a runtime exception such as a segmentation fault or floating point exception occurs
+
+Here are some guidelines and hints to help you develop effective unit tests.
+
+*Test the simpler functions first.*  A good place to start is the `apintCreateFromU64` and `apintGetBits` functions.
+
+*Test every function.*  Your unit tests should test each of the `ApInt` functions thoroughly.
+
+*Test corner cases.*  Test for situations such as:
+
+* Operations on `ApInt` values with varying bit string lengths
+* Left shifts of varying lengths
+* Adding `ApInt` instances with different-length bit strings
+
+*Generate test cases programmatically.*  Write a script or program to generate large random integer values in hexadecimal format, generate test code to test operations on these values, and add them to your unit test program.  For example, here is a script-generated test for the `apintAdd` function:
+
+```c
+a = apintCreateFromHex("7e5ff912c8ede6ccff0d56ae5a9b5459804f9");
+b = apintCreateFromHex("6057bccd860546f03fd51bf5488d50cca96");
+sum = apintAdd(a, b);
+ASSERT(0 == strcmp("7ec050cf9673ec13ef4d2bca4fe3e1aa4cf8f",
+       (s = apintFormatAsHex(sum))));
+apintDestroy(sum);
+apintDestroy(b);
+apintDestroy(a);
+free(s);
+```
+
+As part of generating tests, it will be helpful to have a language or tool that can do arbitrary-precision arithmetic.  Options include Python and the Unix <code class="cmd">bc</code> program.
+
+*Use gdb to investigate bugs.* When a test fails, use <code class="cmd">gdb</code> to help determine the reason for the failure.  Set breakpoints at the program location just prior to the point where the program state becomes corrupted.  Single step and inspect variables to understand what the code is doing.
+
+*Use valgrind to check memory use.* The [valgrind](http://www.valgrind.org/) tool is enormously useful for making sure your code does not contain memory errors such as
+
+* use of uninitialized values
+* out of bounds memory accesses
+* memory leaks
+* double free errors
+
+To run valgrind, on your test program, the command is <code class="cmd">valgrind ./apintTests</code>.
