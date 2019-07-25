@@ -17,7 +17,7 @@ The grading breakdown is as follows:
 
 # Arbitrary-precision integer arithmetic
 
-As you know from the material we have been covering, including Chapter 2 of the textbook, the hardware-supported numeric data types are *finite*, meaning that only a finite set of values can be directly represented using those data types.  Most programming languages (such as C, C++, and Java) use hardware numeric data types to implement their primitive numeric types (`int`, `long`, `double`, etc.)  As you have seen, the finite nature of machine data types leads to some odd situations, such as the existence of values *a* and *b* such that (for example)
+As you know from the material we have been covering, including Chapter 2 of the textbook, the hardware-supported numeric data types are *finite*, meaning that only a finite set of values can be directly represented using those data types.  Most programming languages (such as C, C++, and Java) use hardware numeric data types to implement their primitive numeric types (`int`, `long`, `double`, etc.)  As you have seen, the finite nature of machine data types leads to some odd situations, such as the existence of values *a* and *b* such that
 
 > *a ≥ 0*
 
@@ -28,6 +28,22 @@ As you know from the material we have been covering, including Chapter 2 of the 
 The above inequalities could be true if, for example, the sum *a + b* is too large to represent using the data type to which *a* and *b* belong.
 
 Some applications, such as cryptographic applications, need to represent values which behave like mathematical integers, in which case the machine integer data types can't be used directly.  Some programming languages, notably languges in the LISP family, have first-class support for arbitrary-precision integers (often referred to as "bignums".)  For programming languages without such support, having an arbitrary-precision integer data type can be very useful.
+
+## Bit strings
+
+Arbitrarily large integer values can be represented as bit strings.  For example, the decimal value
+
+> 159114774885074890108
+
+can be represented by the bit string
+
+> 10001010000000101001001111001011101101010101001000100110110101111100
+
+Note that 68 bits are required to represent this particular integer value, and that the highest bit set to 1 is the one representing 2<sup>67</sup>.
+
+Hexadecimal (base 16) notation is convenient for working with bit strings, because each hex "digit" represents exactly 4 bits of information.  The value shown above, represented in hexadecimal, is
+
+> 8A0293CBB55226D7C
 
 # The `ApInt` data type
 
@@ -51,6 +67,7 @@ A set of functions is defined to allow a program to create, use, and destroy ins
 ApInt *apintCreateFromU64(uint64_t val);
 ApInt *apintCreateFromHex(const char *hex);
 void apintDestroy(ApInt *ap);
+uint64_t apintGetBits(ApInt *ap, unsigned n);
 int apintHighestBitSet(ApInt *ap);
 ApInt *apintLshift(ApInt *ap);
 ApInt *apintLshiftN(ApInt *ap, unsigned n);
@@ -67,6 +84,8 @@ Here are brief descriptions of the expected behavior of these functions.
 
 `apintDestroy`: Deallocates the memory used by the `ApInt` instance pointed-to by the `ap` parameter.
 
+`apintGetBits`: Returns a `uint64_t` value containing 64 bits of the binary representation of the `ApInt` instance pointed to by `ap`.  The parameter `n` indicates which bits to return.  If `n` is 0, bits 0..63 are returned, if `n` is 1 bits 64..127 are returned, etc.  The function should be prepared to handle arbitrarily large values of `n`.
+
 `apintHighestBitSet`: Returns the position of the most significant bit set to 1 in representation of the `ApInt` pointed to by `ap`. As a special case, returns -1 if the `ApInt` instance pointed to by `ap` represents the value 0.
 
 `apintLshift`: Returns a pointer to an `ApInt` instance formed by shifting each bit of the `ApInt` instance pointed to by `ap` one position to the left.
@@ -82,7 +101,7 @@ Here are brief descriptions of the expected behavior of these functions.
 
 # Tasks
 
-This section explains the tasks you are responsible for completing.  Note that they aren't meant to be strictly sequential!
+This section explains the tasks you are responsible for completing.  Note that they aren't meant to be strictly sequential, although you will need to handle [Task 1](#task-1-determine-a-data-representation) before proceeding to [Task 2](#task-2-function-implementation) and [Task 3](#task-3-unit-testing).
 
 ## Task 1: Determine a data representation
 
