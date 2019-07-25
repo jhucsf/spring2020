@@ -23,8 +23,8 @@ Mon, Sep 16 | ALU operations, arithmetic | 3.5 | [HW2](hw/hw02.html)
 Wed, Sep 18 | Control flow, stacks | 3.6–3.7
 Fri, Sep 20 | Arrays and structs | 3.8–3.9
 Mon, Sep 23 | Code and data interactions, buffer overflows | 3.10 | [HW3](hw/hw03.html)
-Wed, Sep 25 | Program optimization (basic techniques) | 5.1–5.8 | | [Assignment 2](assign/assign02.html)
-Fri, Sep 27 | Pipelines | TBD
+Wed, Sep 25 | Program optimization (basic techniques) | 5.1–5.8
+Fri, Sep 27 | Pipelines | TBD | | [Assignment 2](assign/assign02.html)
 Mon, Sep 30 | Program optimization (ILP, memory, profiling) | 5.9–5.14 | [HW4](hw/hw04.html)
 Wed, Oct 2 | Memory hierarchy | 6.1–6.3
 Fri, Oct 4 | Exam 1
