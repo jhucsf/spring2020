@@ -8,13 +8,13 @@ This page lists readings and homework/assignment due dates.
 
 Unless otherwise indicated, readings are from Bryant and O'Hallaron, [Computer Systems: A Programmer's Perspective, 3rd ed](https://csapp.cs.cmu.edu/).  **Important**: do the reading *before* you come to class.
 
-The links to lecture notes are provided for reference.  In general, there is no guarantee that they will be posted before class, or that their content will not change.
+The links to slides are provided for reference.  In general, there is no guarantee that they will be posted before class, or that their content will not change.
 
-Date | Topic | Reading | Homework due | Assignment due
+Date | Topic/Slides | Reading | Homework due | Assignment due
 ---- | ----- | ------- | ------------ | --------------
-Fri, Aug 30 | Course overview, binary data representation review | 1.1–1.9
+Fri, Aug 30 | [Course overview, binary data representation review](lectures/lecture01-public.pdf) | 1.1–1.9
 Mon, Sep 2 | *Labor day, no class* | —
-Wed, Sep 4 | Data representation, addresses | 2.1
+Wed, Sep 4 | [Data representation, addresses](lectures/lecture02-public.pdf) | 2.1
 Fri, Sep 6 | Integer representation | 2.2
 Mon, Sep 9 | Integer arithmetic | 2.3 | [HW1](hw/hw01.html)
 Wed, Sep 11 | Floating point | 2.4
