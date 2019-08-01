@@ -150,13 +150,13 @@ expectedExit = 1; /* about to test code that is supposed to call exit */
 
 if (sigsetjmp(exitBuf, 1) == 0) {
   eval("2 3 + 4");    /* invalid postfix expression */
-  FATAL("eval function failed to exit for invalid expression");
+  FAIL("eval function failed to exit for invalid expression");
 } else {
   printf("Good, eval properly called exit for invalid expression...");
 }
 ```
 
-This approach works because **cTests.c** has its own version of the `exit` function which uses `siglongjmp` to transfer control back to the call to `sigsetjmp` but return with a nonzero return code.  The `sigsetjmp` and `siglongjmp` functions are essentially primitive forms of `try`/`catch` and `throw` (respectively).  You can read more about these functions in Chapter 8 of the textbook.  (Note that the `FATAL` macro, which causes a unit test to immediately fail, also takes advantage of `sigsetjmp`/`siglongjmp`.)
+This approach works because **cTests.c** has its own version of the `exit` function which uses `siglongjmp` to transfer control back to the call to `sigsetjmp` but return with a nonzero return code.  The `sigsetjmp` and `siglongjmp` functions are essentially primitive forms of `try`/`catch` and `throw` (respectively).  You can read more about these functions in Chapter 8 of the textbook.  (Note that the `FAIL` macro, which causes a unit test to immediately fail, also takes advantage of `sigsetjmp`/`siglongjmp`.)
 
 ## Task 3: System-level tests
 
