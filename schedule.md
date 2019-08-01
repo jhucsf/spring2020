@@ -15,8 +15,8 @@ Date | Topic/Slides | Reading | Homework due | Assignment due
 Fri, Aug 30 | [Course overview, binary data representation review](lectures/lecture01-public.pdf) | 1.1–1.9
 Mon, Sep 2 | *Labor day, no class* | —
 Wed, Sep 4 | [Data representation, addresses](lectures/lecture02-public.pdf) | 2.1
-Fri, Sep 6 | Integer representation | 2.2
-Mon, Sep 9 | Integer arithmetic | 2.3 | [HW1](hw/hw01.html)
+Fri, Sep 6 | [Integer representation](lectures/lecture03-public.pdf) | 2.2
+Mon, Sep 9 | [Integer arithmetic](lectures/lecture04-public.pdf) | 2.3 | [HW1](hw/hw01.html)
 Wed, Sep 11 | Floating point | 2.4
 Fri, Sep 13 | Machine-level program execution | 3.1–3.4 | | [Assignment 1](assign/assign01.html)
 Mon, Sep 16 | ALU operations, arithmetic | 3.5 | [HW2](hw/hw02.html)
