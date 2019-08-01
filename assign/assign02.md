@@ -91,22 +91,22 @@ where <code><i>msg</i></code> is a message describing the error.  The program sh
 
 The source code for the C version of the program is in two files, **cPostfixCalcMain.c** and **cPostfixCalcFuncs.**.  There is also a header file **cPostfixCalc.h**, which you should use for definitions and function prototypes.  The **main** function should be in **cPostfixCalcMain.c**; all other functions should be in **cPostfixCalcFuncs.c**.
 
-Running the command <code class="cmd">make cPostfixCalc</code> will compile the two source files and link them into an executable **cPostfixCalc**.  Here are some example invocations you can try from the command line:
+Running the command `make cPostfixCalc` will compile the two source files and link them into an executable **cPostfixCalc**.  Here are some example invocations you can try from the command line:
 
 Invocation | Expected output
 ---------- | ---------------
-<code class="cmd">./cPostfixCalc '1 1 +'</code> | `Result is: 2`
-<code class="cmd">./cPostfixCalc '7 2 -'</code> | `Result is: 5`
-<code class="cmd">./cPostfixCalc '3 4 5 + &#42;'</code> | `Result is: 27`
-<code class="cmd">./cPostfixCalc '17 3 /'</code> | `Result is: 5`
-<code class="cmd">./cPostfixCalc '3 10 /'</code> | `Result is: -7`
-<code class="cmd">./cPostfixCalc '2 3 4 5 +-&#42;'</code> | `Result is: -12`
-<code class="cmd">./cPostfixCalc '10 2 - &#42;'</code> | `Error: ...`
-<code class="cmd">./cPostfixCalc '2 3 + 4'</code> | `Error: ...`
+`./cPostfixCalc '1 1 +'` | `Result is: 2`
+`./cPostfixCalc '7 2 -'` | `Result is: 5`
+`./cPostfixCalc '3 4 5 + *'` | `Result is: 27`
+`./cPostfixCalc '17 3 /'` | `Result is: 5`
+`./cPostfixCalc '3 10 /'` | `Result is: -7`
+`./cPostfixCalc '2 3 4 5 +-*'` | `Result is: -12`
+`./cPostfixCalc '10 2 - *'` | `Error: ...`
+`./cPostfixCalc '2 3 + 4'` | `Error: ...`
 
 Note that in the cases where the postfix expression is invalid, the specific output text following `Error:` is not mandated — just have the program print something descriptive of the error.  For example, in the case of the invocation
 
-> <code class="cmd">./cPostfixCalc '2 3 + 4'</code>
+> `./cPostfixCalc '2 3 + 4'`
 
 the full error message might be something like `Error: multiple values left on stack`.
 
@@ -135,9 +135,9 @@ Note that you are not required to implement these exact functions, but you may i
 
 As you develop each function in the C postfix calculator program, write unit tests for it.  The source file **cTests.c** is a starting point for writing unit tests.  The unit test code will use the same unit testing framework as [Assignment 1](assign01.html).
 
-To compile the C version of the unit tests, run the command <code class="cmd">make cTests</code>.  To run the tests, run the command
+To compile the C version of the unit tests, run the command `make cTests`.  To run the tests, run the command
 
-> <code class="cmd">./cTests</code>
+> `./cTests`
 
 ### Hints for Task 2
 
@@ -179,7 +179,7 @@ You should add your own tests.  As with the unit tests, try to think of corner c
 
 To run the system tests on your C postfix calculator implementation, run the command
 
-> <code class="cmd">./sysTests.sh ./cPostfixCalc</code>
+> `./sysTests.sh ./cPostfixCalc`
 
 ## Task 4: Postfix calculator in assembly
 
@@ -187,9 +187,9 @@ In this task, you will write an x86-64 assembly language version of the postfix 
 
 Note that the **.S** file extension means "preprocessed assembly", so you can use C-style comments in your assembly code.  You can also use `#define` to define named constants, just as you would in a C program.
 
-To assemble and link the assembly language program, run the command <code class="cmd">make asmPostfixCalc</code>.  Run it exactly the same way as the C version, e.g.
+To assemble and link the assembly language program, run the command `make asmPostfixCalc`.  Run it exactly the same way as the C version, e.g.
 
-> <code class="cmd">./asmPostfixCalc '1 2 +'</code>
+> `./asmPostfixCalc '1 2 +'`
 
 ### Writing assembly code
 

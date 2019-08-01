@@ -148,7 +148,7 @@ make apintTests
 ./apintTests
 ```
 
-Note that the command <code class="cmd">./apintTests</code> runs all of the test functions.  You can run a specific test function by specifying its name as a command line argument: for example,
+Note that the command `./apintTests` runs all of the test functions.  You can run a specific test function by specifying its name as a command line argument: for example,
 
 ```bash
 ./apintTests testCreateFromU64
@@ -186,9 +186,9 @@ apintDestroy(a);
 free(s);
 ```
 
-As part of generating tests, it will be helpful to have a language or tool that can do arbitrary-precision arithmetic.  Options include Python and the Unix <code class="cmd">bc</code> program.
+As part of generating tests, it will be helpful to have a language or tool that can do arbitrary-precision arithmetic.  Options include Python and the Unix `bc` program.
 
-*Use gdb to investigate bugs.* When a test fails, use <code class="cmd">gdb</code> to help determine the reason for the failure.  Set breakpoints at the program location just prior to the point where the program state becomes corrupted.  Single step and inspect variables to understand what the code is doing.
+*Use gdb to investigate bugs.* When a test fails, use `gdb` to help determine the reason for the failure.  Set breakpoints at the program location just prior to the point where the program state becomes corrupted.  Single step and inspect variables to understand what the code is doing.
 
 *Use valgrind to check memory use.* The [valgrind](http://www.valgrind.org/) tool is enormously useful for making sure your code does not contain memory errors such as
 
@@ -197,4 +197,4 @@ As part of generating tests, it will be helpful to have a language or tool that 
 * memory leaks
 * double free errors
 
-To run valgrind, on your test program, the command is <code class="cmd">valgrind ./apintTests</code>.
+To run valgrind, on your test program, the command is `valgrind ./apintTests`.
