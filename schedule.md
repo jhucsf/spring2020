@@ -49,10 +49,10 @@ Wed, Nov 13 | Concurrency with I/O multiplexing | 12.2
 Fri, Nov 15 | Concurrency with threads, synchronization | 12.3–12.5 | [HW11](hw/hw11.html)
 Mon, Nov 18 | Parallelism, concurrency issues | 12.6–12.7
 Wed, Nov 20 | Exam 2
-Fri, Nov 22 | *Thanksgiving vacation, no class*
+Fri, Nov 22 | —
 Mon, Nov 25 | *Thanksgiving vacation, no class*
 Wed, Nov 27 | *Thanksgiving vacation, no class*
-Fri, Nov 29 | — | | | 
+Fri, Nov 29 | *Thanksgiving vacation, no class*
 Mon, Dec 2 | —
 Wed, Dec 4 | — | | | [Assignment 6](assign/assign06.html)
 Fri, Dec 6 | —
