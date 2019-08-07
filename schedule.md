@@ -12,13 +12,13 @@ The links to slides are provided for reference.  In general, there is no guarant
 
 Date | Topic/Slides | Reading | Homework due | Assignment due
 ---- | ----- | ------- | ------------ | --------------
-Thu, Aug 29 | [Course overview, binary data representation review](lectures/lecture01-public.pdf) | 1.1–1.9 
-Fri, Aug 30 | [Data representation, addresses](lectures/lecture02-public.pdf) | 2.1
+Thu, Aug 29 | Course overview, binary data representation review [slides](lectures/lecture01-public.pdf) | 1.1–1.9
+Fri, Aug 30 | Data representation, addresses [slides](lectures/lecture02-public.pdf) | 2.1
 Mon, Sep 2 | *Labor day, no class* | —
-Wed, Sep 4 | [Integer representation](lectures/lecture03-public.pdf) | 2.2
-Fri, Sep 6 | [Integer arithmetic](lectures/lecture04-public.pdf) | 2.3 | [HW1](hw/hw01.html)
-Mon, Sep 9 | Floating point | 2.4
-Wed, Sep 11 | Machine-level program execution | 3.1–3.4 | | [Assignment 1](assign/assign01.html)
+Wed, Sep 4 | Integer representation [slides](lectures/lecture03-public.pdf) | 2.2
+Fri, Sep 6 | Integer arithmetic [slides](lectures/lecture04-public.pdf) | 2.3 | [HW1](hw/hw01.html)
+Mon, Sep 9 | Floating point [slides](lectures/lecture05-public.pdf) | 2.4
+Wed, Sep 11 | Machine-level program representation [slides](lectures/lecture06-public.pdf) | 3.1–3.4 | | [Assignment 1](assign/assign01.html)
 Fri, Sep 13 | ALU operations, arithmetic | 3.5 | [HW2](hw/hw02.html)
 Mon, Sep 16 | Control flow, stacks | 3.6–3.7
 Wed, Sep 18 | Arrays and structs | 3.8–3.9
