@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Computer Systems Fundamentals, Fall 2019"
+title: "Computer Systems Fundamentals, Spring 2020"
 category: "home"
 ---
 
-Welcome to the website for Computer Systems Fundamentals (Fall 2019) at <a href="https://www.jhu.edu/">Johns Hopkins University</a>!
+Welcome to the website for Computer Systems Fundamentals (Spring 2020) at <a href="https://www.jhu.edu/">Johns Hopkins University</a>!
 
 The course is about *computer systems* from the *programmer's perspective*.  We'll be making a fairly deep dive into topics such as data representation, memory, assembly language, CPU architecture, networks, and concurrency.  By the end of the course you'll know a lot about how modern computers really work and how to take advantage of their advanced features.
 

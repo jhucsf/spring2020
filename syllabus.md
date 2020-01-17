@@ -4,7 +4,7 @@ title: "Syllabus"
 category: "syllabus"
 ---
 
-# Computer Systems Fundamentals, Fall 2019
+# Computer Systems Fundamentals, Spring 2020
 
 Staff:
 
