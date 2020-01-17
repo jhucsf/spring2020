@@ -59,7 +59,7 @@ Lecture notes, assignments, and public information about the course will be post
 on the course website, <https://jhucsf.github.io/spring2020>.  You should check
 the course website frequently.
 
-We will be using Piazza for discussion and Q\&A.  The course's Piazza site
+We will be using Piazza for discussion and Q&amp;A.  The course's Piazza site
 is <https://piazza.com/jhu/spring2020/601229>.
 
 Assignments will be submitted using Gradescope: <https://www.gradescope.com/>.

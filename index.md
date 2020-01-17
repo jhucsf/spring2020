@@ -10,4 +10,13 @@ The course is about *computer systems* from the *programmer's perspective*.  We'
 
 All public information about the course (readings, assignments, etc.) will be posted on this website.
 
-Use the links above to navigate the site.  The [Syllabus](syllabus.html) describes course policies. The [Schedule](schedule.html) is the central location for course content (readings, homeworks and labs, and exams), and explains what is happening when.  The [Resources](resources.html) page has links to useful resources.
+Use the links above to navigate the site.  The [Syllabus](syllabus.html) describes course policies. The [Schedule](schedule.html) is the schedule of readings and exams.  The [Assignments](assignments.html) page has links to the programming assignments and indicates when they are due.  The [Resources](resources.html) page has links to useful resources.
+
+## Important links
+
+* Piazza (ask questions here!): <https://piazza.com/jhu/spring2020/601229>
+* Gradescope (assignment submission): <https://www.gradescope.com/>
+
+## News
+
+* **Jan 27** — Welcome back! We hope you had a great winter break.
