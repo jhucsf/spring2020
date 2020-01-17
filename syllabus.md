@@ -79,6 +79,17 @@ Your course grade will be determined as follows:
 * Exams: 40%
 * Clicker quizzes: 5%
 
+## Late Days
+
+You have a total of 5 *late days* to use as needed for homework assignments
+throughout the course.  Each 24 hour period following an assignment deadline
+is considered to be one late day: for example, if an assignment is due
+at 10pm on Friday, but you submit your assignment at 11pm on Friday, you
+have used one late day.  If you are planning on using more than two late
+days on an assignment, please send a private message to the instructors on
+Piazza to let us know.  Assignment submissions which exceed the maximum number
+of late days will not be considered for credit.
+
 ## Academic integrity expectations
 
 As with all CS courses, we expect that you will honor the CS Academic Integrity Code:
