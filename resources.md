@@ -31,7 +31,11 @@ The above VM image has all of the software you will need to work on
 assignments in CSF, and it more or less exactly matches the environment
 used by Gradescope autograders.  After you've downloaded it, use **File** → **Import Appliance**
 within VirtualBox, select the `.ova` file, wait for the import to complete,
-then you should be able to start and run the VM.
+then you should be able to start and run the VM.  Note that VirtualBox will
+require that your CPU's hardware virtualization features are enabled.
+If you see a message about CPU virtualization not being enabled, you should
+be able to reboot your computer, enter the BIOS configuration, and enable
+the CPU virtualization features.
 
 ## Tools
 
