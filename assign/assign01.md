@@ -64,40 +64,40 @@ Because `ApInt` instances can represent any arbitrarily-large integer value, the
 A set of functions is defined to allow a program to create, use, and destroy instance of `ApInt`.  All of these functions have named beginning with `apint`.  (It is a good practice when designing APIs for C programs to use a common naming prefix for functions associated with a particular data type.)  These functions are:
 
 ```c
-ApInt *apintCreateFromU64(uint64_t val);
-ApInt *apintCreateFromHex(const char *hex);
-void apintDestroy(ApInt *ap);
-uint64_t apintGetBits(ApInt *ap, unsigned n);
-int apintHighestBitSet(ApInt *ap);
-ApInt *apintLshift(ApInt *ap);
-ApInt *apintLshiftN(ApInt *ap, unsigned n);
-char *apintFormatAsHex(ApInt *ap);
-ApInt *apintAdd(const ApInt *a, const ApInt *b);
-int apintCompare(const ApInt *left, const ApInt *right);
+ApInt *apint_create_from_u64(uint64_t val);
+ApInt *apint_create_from_hex(const char *hex);
+void apint_destroy(ApInt *ap);
+uint64_t apint_get_bits(ApInt *ap, unsigned n);
+int apint_highest_bit_set(ApInt *ap);
+ApInt *apint_lshift(ApInt *ap);
+ApInt *apint_lshift_n(ApInt *ap, unsigned n);
+char *apint_format_as_hex(ApInt *ap);
+ApInt *apint_add(const ApInt *a, const ApInt *b);
+int apint_compare(const ApInt *left, const ApInt *right);
 ```
 
 Here are brief descriptions of the expected behavior of these functions.
 
-`apintCreateFromU64`: Returns a pointer to an `ApInt` instance whose value is specified by the `val` parameter, which is a 64-bit unsigned value.
+`apint_create_from_u64`: Returns a pointer to an `ApInt` instance whose value is specified by the `val` parameter, which is a 64-bit unsigned value.
 
-`apintCreateFromHex`: Returns a pointer to an `ApInt` instance whose value is specified by the `hex` parameter, which is an arbitrary sequence of hexadecimal (base 16) digits.  This function should accept both the lower-case letters `a` through `f` and the upper-case letters `A` through `F` as the hex digits with values 10 through 15.
+`apint_create_from_hex`: Returns a pointer to an `ApInt` instance whose value is specified by the `hex` parameter, which is an arbitrary sequence of hexadecimal (base 16) digits.  This function should accept both the lower-case letters `a` through `f` and the upper-case letters `A` through `F` as the hex digits with values 10 through 15.
 
-`apintDestroy`: Deallocates the memory used by the `ApInt` instance pointed-to by the `ap` parameter.
+`apint_destroy`: Deallocates the memory used by the `ApInt` instance pointed-to by the `ap` parameter.
 
-`apintGetBits`: Returns a `uint64_t` value containing 64 bits of the binary representation of the `ApInt` instance pointed to by `ap`.  The parameter `n` indicates which bits to return.  If `n` is 0, bits 0..63 are returned, if `n` is 1 bits 64..127 are returned, etc.  The function should be prepared to handle arbitrarily large values of `n`.
+`apint_get_bits`: Returns a `uint64_t` value containing 64 bits of the binary representation of the `ApInt` instance pointed to by `ap`.  The parameter `n` indicates which bits to return.  If `n` is 0, bits 0..63 are returned, if `n` is 1 bits 64..127 are returned, etc.  The function should be prepared to handle arbitrarily large values of `n`.
 
-`apintHighestBitSet`: Returns the position of the most significant bit set to 1 in representation of the `ApInt` pointed to by `ap`. As a special case, returns -1 if the `ApInt` instance pointed to by `ap` represents the value 0.
+`apint_highest_bit_set`: Returns the position of the most significant bit set to 1 in representation of the `ApInt` pointed to by `ap`. As a special case, returns -1 if the `ApInt` instance pointed to by `ap` represents the value 0.
 
-`apintLshift`: Returns a pointer to an `ApInt` instance formed by shifting each bit of the `ApInt` instance pointed to by `ap` one position to the left.
+`apint_lshift`: Returns a pointer to an `ApInt` instance formed by shifting each bit of the `ApInt` instance pointed to by `ap` one position to the left.
 
-`apintLshiftN`: Returns a pointer to an `ApInt` instance formed by shifting each bit of the `ApInt` instance pointed to by `ap` *n* positions to the left.
+`apint_lshift_n`: Returns a pointer to an `ApInt` instance formed by shifting each bit of the `ApInt` instance pointed to by `ap` *n* positions to the left.
 
 
-`apintFormatAsHex`: Returns a pointer to a dynamically-allocated C character string containing the hexadecimal (base 16) digits of the representation of the `ApInt` instance pointed to by `ap`.  Note that the hex digits representing the values 10 through 15 should be *lower-case* `a` through `f`.  The string returned should not have any leading zeroes, except in the special case of the `ApInt` instance representing the value 0, in which case the returned string should consist of a single `0` digit.
+`apint_format_as_hex`: Returns a pointer to a dynamically-allocated C character string containing the hexadecimal (base 16) digits of the representation of the `ApInt` instance pointed to by `ap`.  Note that the hex digits representing the values 10 through 15 should be *lower-case* `a` through `f`.  The string returned should not have any leading zeroes, except in the special case of the `ApInt` instance representing the value 0, in which case the returned string should consist of a single `0` digit.
 
-`apintAdd`: Adds the values represented by the `ApInt` instances pointed-to by the parameters `a` and `b`, and returns a pointer to an `ApInt` instance representing their sum.
+`apint_add`: Adds the values represented by the `ApInt` instances pointed-to by the parameters `a` and `b`, and returns a pointer to an `ApInt` instance representing their sum.
 
-`apintCompare`: Compares the values represented by the `ApInt` instances pointed-to by the parameters `left` and `right`.  Returns a negative value if `left` is less that `right`, a positive value if `left` is greater than `right`, and 0 if the values are equal.
+`apint_compare`: Compares the values represented by the `ApInt` instances pointed-to by the parameters `left` and `right`.  Returns a negative value if `left` is less that `right`, a positive value if `left` is greater than `right`, and 0 if the values are equal.
 
 # Tasks
 
@@ -111,7 +111,7 @@ The basic idea is that the bit string required to represent the numeric value of
 
 The representation should be reasonably space efficient.  For example, an array of `uint32_t` or `uint64_t` values, such that the bits of the overall integer value are packed into the array elements, would be a space-efficient representation, because at most some small number (63 or fewer) of bits per instance would be "wasted" (by being leading 0 bits in the array element representing the most significant chunk of the bit string.)  In contrast, representing the numeric value using hexadecimal digits stored n an array of `char` values would *not* be a space-efficient representation, since each `char` element would store one of only 16 possible values, wasting half of the bits in the array.
 
-Note that you could represent the value using an array of small (8 or 16 bit) integer elements.  However, the `apintAdd` function can be implemented more efficiently if it can operate on larger chunks of data.
+Note that you could represent the value using an array of small (8 or 16 bit) integer elements.  However, the `apint_add` function can be implemented more efficiently if it can operate on larger chunks of data.
 
 The `ApInt` representation should have a way of keeping track of the length of the array storing the bit string.  The idea is that `ApInt` values requiring more bits to represent will (in general) require more storage.  The functions which operate on `ApInt` values will need to know the array length of each `ApInt` instance.
 
@@ -125,9 +125,9 @@ Here are a few hints.
 
 Use the `assert` macro to verify preconditions, postconditions, and invariants: assertions are a great way of catching logic errors in your code before they cause a crash or incorrect results
 
-Start with the simpler functions (such as `apintCreateFromU64` and `apintDestroy`), verify that they are working completely by writing unit tests, then move on to more complex functions (such as `apintLshiftN` and `apintAdd`)
+Start with the simpler functions (such as `apint_create_from_u64` and `apint_destroy`), verify that they are working completely by writing unit tests, then move on to more complex functions (such as `apint_lshift_n` and `apint_add`)
 
-Getting the `apintCreateFromHex` and `apintFormatAsHex` functions to work is an important milestone because they allow your test code to easily create and verify arbitrarily large integer values
+Getting the `apint_create_from_hex` and `apint_format_as_hex` functions to work is an important milestone because they allow your test code to easily create and verify arbitrarily large integer values
 
 ## Task 3: Unit testing
 
@@ -162,7 +162,7 @@ When you run the test program, you will see output indicating which tests passed
 
 Here are some guidelines and hints to help you develop effective unit tests.
 
-*Test the simpler functions first.*  A good place to start is the `apintCreateFromU64` and `apintGetBits` functions.
+*Test the simpler functions first.*  A good place to start is the `apint_create_from_u64` and `apint_get_bits` functions.
 
 *Test every function.*  Your unit tests should test each of the `ApInt` functions thoroughly.
 
@@ -172,17 +172,17 @@ Here are some guidelines and hints to help you develop effective unit tests.
 * Left shifts of varying lengths
 * Adding `ApInt` instances with different-length bit strings
 
-*Generate test cases programmatically.*  Write a script or program to generate large random integer values in hexadecimal format, generate test code to test operations on these values, and add them to your unit test program.  For example, here is a script-generated test for the `apintAdd` function:
+*Generate test cases programmatically.*  Write a script or program to generate large random integer values in hexadecimal format, generate test code to test operations on these values, and add them to your unit test program.  For example, here is a script-generated test for the `apint_add` function:
 
 ```c
-a = apintCreateFromHex("7e5ff912c8ede6ccff0d56ae5a9b5459804f9");
-b = apintCreateFromHex("6057bccd860546f03fd51bf5488d50cca96");
-sum = apintAdd(a, b);
+a = apint_create_from_hex("7e5ff912c8ede6ccff0d56ae5a9b5459804f9");
+b = apint_create_from_hex("6057bccd860546f03fd51bf5488d50cca96");
+sum = apint_add(a, b);
 ASSERT(0 == strcmp("7ec050cf9673ec13ef4d2bca4fe3e1aa4cf8f",
-       (s = apintFormatAsHex(sum))));
-apintDestroy(sum);
-apintDestroy(b);
-apintDestroy(a);
+       (s = apint_format_as_hex(sum))));
+apint_destroy(sum);
+apint_destroy(b);
+apint_destroy(a);
 free(s);
 ```
 
