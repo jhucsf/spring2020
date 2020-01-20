@@ -12,11 +12,24 @@ This page has links to useful resources.
 
 For the programming assignments, you will need to use a recent x86-64 (64 bit) version of Linux.
 
-Any of the computers that are part of the [Ugrad net](https://support.cs.jhu.edu/wiki/Linux_Clients_on_the_CS_Undergrad_Net) will work.  You can use ssh to connect to one of these computers via the network.
+Any of the computers that are part of the [Ugrad
+net](https://support.cs.jhu.edu/wiki/Linux_Clients_on_the_CS_Undergrad_Net)
+will work reasonably well, although the compiler versions will not
+necessarily be the same ones that Gradescope uses.  You can use ssh to
+connect to one of these computers via the network.
 
-If you use [Ubuntu 18.04](http://releases.ubuntu.com/18.04/), or a distribution based on Ubuntu 18.04 (such as [Linux Mint 19.1](https://linuxmint.com/release.php?id=34)), then you are using the same Linux version that [Gradescope](https://www.gradescope.com/) uses to run autograding scripts.  [Fedora Workstation](https://getfedora.org/en/workstation/) is also a good option.  Make sure you get the 64 bit version of whichever distribution you run!
+If you are planning to use your own computer for development,
+we *highly* recommend using some flavor of Ubuntu 18.04.  If your
+computer is running Windows or MacOS, and you would still like to do
+development on your own machine, one excellent option is to install
+[VirtualBox](https://www.virtualbox.org) on your computer, and then
+download the following Virtual Machine image:
 
-[VirtualBox](https://www.virtualbox.org/) is a good way to run Linux if you don't want to (or can't) run Linux directly on your computer.  In general, you can set up a Linux virtual machine by booting from the ISO installer image for the distribution you want to use.  You'll want to allocate a reasonably-large amount of RAM (2 GB minimum, 4 GB ideally) to the virtual machine, as well as adequate disk space (20 GB should be comfortable.)
+> [Ubuntu MATE 18.04 for CSF.ova](https://drive.google.com/file/d/13rsQzOWNvAW3AIIC6M-BcoNRDYgdwcYA/view?usp=sharing) (3.6 GB download: username `csf`, password `csf`)
+
+The above VM image has all of the software you will need to work on
+assignments in CSF, and it more or less exactly matches the environment
+used by Gradescope autograders.
 
 ## Tools
 
