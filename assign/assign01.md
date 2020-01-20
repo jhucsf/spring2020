@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 1: Arbitrary-precision arithmetic"
 ---
 
-Due: *TBD*
+Due: Friday, Feb 7 by 11pm
 
 # Overview
 
@@ -14,6 +14,18 @@ The grading breakdown is as follows:
 * Impementation of data type and functions: 60%
 * Unit tests: 30%
 * Design and coding style: 10%
+
+## Getting started
+
+Download [csf\_assign01.zip](csf_assign01.zip), which contains the skeleton code for the assignment.
+
+You can download this file from a Linux command prompt using the `curl` command:
+
+```bash
+curl -O https://jhucsf.github.io/spring2020/assign/csf_assign01.zip
+```
+
+Note that in the `-O` option, it is the letter "O", not the numeral "0".
 
 # Arbitrary-precision integer arithmetic
 
@@ -73,6 +85,7 @@ ApInt *apint_lshift(ApInt *ap);
 ApInt *apint_lshift_n(ApInt *ap, unsigned n);
 char *apint_format_as_hex(ApInt *ap);
 ApInt *apint_add(const ApInt *a, const ApInt *b);
+ApInt *apint_sub(const ApInt *a, const ApInt *b);
 int apint_compare(const ApInt *left, const ApInt *right);
 ```
 
@@ -95,7 +108,9 @@ Here are brief descriptions of the expected behavior of these functions.
 
 `apint_format_as_hex`: Returns a pointer to a dynamically-allocated C character string containing the hexadecimal (base 16) digits of the representation of the `ApInt` instance pointed to by `ap`.  Note that the hex digits representing the values 10 through 15 should be *lower-case* `a` through `f`.  The string returned should not have any leading zeroes, except in the special case of the `ApInt` instance representing the value 0, in which case the returned string should consist of a single `0` digit.
 
-`apint_add`: Adds the values represented by the `ApInt` instances pointed-to by the parameters `a` and `b`, and returns a pointer to an `ApInt` instance representing their sum.
+`apint_add`: Computes the sum `a` plus `b`, and returns a pointer to an `ApInt` instance representing the sum.
+
+`apint_sub`: Computes the difference `a` minus `b`, and returns a pointer to an `ApInt` instance representing the difference.  As a special case, if `b` is greater than `a`, returns `NULL` (since the `ApInt` data type cannot represent a negative value.)
 
 `apint_compare`: Compares the values represented by the `ApInt` instances pointed-to by the parameters `left` and `right`.  Returns a negative value if `left` is less that `right`, a positive value if `left` is greater than `right`, and 0 if the values are equal.
 
@@ -111,7 +126,7 @@ The basic idea is that the bit string required to represent the numeric value of
 
 The representation should be reasonably space efficient.  For example, an array of `uint32_t` or `uint64_t` values, such that the bits of the overall integer value are packed into the array elements, would be a space-efficient representation, because at most some small number (63 or fewer) of bits per instance would be "wasted" (by being leading 0 bits in the array element representing the most significant chunk of the bit string.)  In contrast, representing the numeric value using hexadecimal digits stored n an array of `char` values would *not* be a space-efficient representation, since each `char` element would store one of only 16 possible values, wasting half of the bits in the array.
 
-Note that you could represent the value using an array of small (8 or 16 bit) integer elements.  However, the `apint_add` function can be implemented more efficiently if it can operate on larger chunks of data.
+Note that you could represent the value using an array of small (8 or 16 bit) integer elements.  However, the `apint_add` and `apint_sub` functions can be implemented more efficiently if they can operate on larger chunks of data.
 
 The `ApInt` representation should have a way of keeping track of the length of the array storing the bit string.  The idea is that `ApInt` values requiring more bits to represent will (in general) require more storage.  The functions which operate on `ApInt` values will need to know the array length of each `ApInt` instance.
 
@@ -198,3 +213,10 @@ As part of generating tests, it will be helpful to have a language or tool that 
 * double free errors
 
 To run valgrind, on your test program, the command is `valgrind ./apintTests`.
+
+# Submitting
+
+To submit your work:
+
+* Run the command `make solution.zip`
+* Upload `solution.zip` to [Gradescope](https://www.gradescope.com/) as **Assignment1**
