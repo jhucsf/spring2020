@@ -29,7 +29,9 @@ download the following Virtual Machine image:
 
 The above VM image has all of the software you will need to work on
 assignments in CSF, and it more or less exactly matches the environment
-used by Gradescope autograders.
+used by Gradescope autograders.  After you've downloaded it, use **File** → **Import Appliance**
+within VirtualBox, select the `.ova` file, wait for the import to complete,
+then you should be able to start and run the VM.
 
 ## Tools
 
