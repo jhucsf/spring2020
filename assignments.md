@@ -8,9 +8,16 @@ category: "assignments"
 
 This page lists the programming assignments for the course.
 
+Some advice about the programming assignments:
+
+* They are *individual* assignments
+* Do not wait until the last minute to start: if we give you two weeks to complete an assignment, it's because we expect that it will take you two weeks (working steadily)
+* Ask questions on [Piazza](https://piazza.com/jhu/spring2020/601229) and in office hours
+* Use good programming practices
+* Test your code thoroughly (plan to spend about as much time testing the code as writing it)
 
 Assignment | Due
 ---------- | ---
-[Assignment 1: Arbitrary-precision arithmetic](assign/assign01.html) | TBD
-[Assignment 2: Postfix calculator](assign/assign02.html) | TBD
+[Assignment 1: Arbitrary-precision arithmetic](assign/assign01.html) | Friday, Feb 7 by 11pm
+[Assignment 2: Postfix calculator](assign/assign02.html) | Wednesday, February 26 by 11pm
 [Assignment 3: Cache simulator, code optimization](assign/assign03.html) | TBD
