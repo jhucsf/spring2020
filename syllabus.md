@@ -8,7 +8,7 @@ category: "syllabus"
 
 Staff:
 
-Name | Role | Email | Details
+Name | Role | Email | Office
 ---- | ---- | ----- | -------
 [Xin Jin](https://www.cs.jhu.edu/~xinjin/) | Instructor | <mailto:xinjin@cs.jhu.edu> | Malone 233
 [David Hovemeyer](https://www.cs.jhu.edu/~daveho) | Instructor | <mailto:daveho@cs.jhu.edu> | Malone 337
@@ -84,11 +84,15 @@ Your course grade will be determined as follows:
 You have a total of 5 *late days* to use as needed for homework assignments
 throughout the course.  Each 24 hour period following an assignment deadline
 is considered to be one late day: for example, if an assignment is due
-at 10pm on Friday, but you submit your assignment at 11pm on Friday, you
+at 11pm on Friday, but you submit your assignment at 11:30pm on Friday, you
 have used one late day.  If you are planning on using more than two late
 days on an assignment, please send a private message to the instructors on
 Piazza to let us know.  Assignment submissions which exceed the maximum number
 of late days will not be considered for credit.
+
+Note that we will not grant additional late days unless there are truly exceptional
+circumstances.  Being busy is not, by itself, an exceptional circumstance.
+So, use your late days wisely!
 
 ## Academic integrity expectations
 
