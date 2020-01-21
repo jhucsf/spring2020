@@ -19,7 +19,7 @@ The grading breakdown is:
 
 This is a challenging assignment.  Don't wait until the last minute to start it!  As usual, ask questions using Piazza, come to office hours, etc.
 
-**Important**: When you write assembly code, you must *actually* write assembly code. Using the compiler to generate assembly code is *not* allowed.  See <a href="#task-4-postfix-calculator-in-assembly">Task 4</a> for more details.
+**Important**: When you write assembly code, you must *actually* write assembly code. Using the compiler to generate assembly code is *not* allowed.  In addition, we expect *highly detailed* code comments; in assembly lanuage programs, it's not unusual for *every* line of code to be commented.  See <a href="#task-4-postfix-calculator-in-assembly">Task 4</a> for more details.
 
 When you are done with this assignment you will have proved yourself capable of writing nontrivial x86-64 assembly code.  This is a foundational skill for hacking on operating systems and compilers, understanding security vulnerabilities such as buffer overflows, and generally becoming one with the machine.
 
@@ -197,6 +197,8 @@ The purpose of this assignment is for you to learn how to write assembly code by
 
 You may inspect compiler-generated assembly code as a learning tool, but you should do so sparingly, and you should *never* directly copy any compiler-generated code into your assembly source files.
 
+We expect your assembly code to have *very detailed* code comments.  The code comments should explain *exactly* what your assembly code is doing.  You should not expect to receive substantial credit for inadequately-commented code.
+
 ### Hints for Task 4
 
 This task is challenging!  Here are some hints to help you make progress.
@@ -241,6 +243,38 @@ The code above allocates *N* bytes of memory in the stack frame for local variab
 ```
 leaq 8(%rbp), %rdi
 ```
+
+*Use local labels starting with `.L` for flow control.*  As you implement flow control (such as loops and decisions) in your program, you will need to define labels for branch targets.  You should use names starting with `.L` (period followed by capital L) for these labels.  This will ensure that the assembler does not enter them into the symbol table as function entry points, which will make debugging with `gdb` difficult.  Here is an example assembly language function with local labels:
+
+```
+/*
+ * Determine the length of specified character string.
+ *
+ * Parameters:
+ *   s - pointer to a NUL-terminated character string
+ *
+ * Returns:
+ *    number of characters in the string
+ */
+	.globl strLen
+strLen:
+	subq $8, %rsp                 /* adjust stack pointer */
+	movq $0, %r10                 /* initial count is 0 */
+
+.LstrLenLoop:
+	cmpb $0, (%rdi)               /* found NUL terminator? */
+	jz .LstrLenDone               /* if so, done */
+	inc %r10                      /* increment count */
+	inc %rdi                      /* advance to next character */
+	jmp .LstrLenLoop              /* continue loop */
+
+.LstrLenDone:
+	movq %r10, %rax               /* return count */
+	addq $8, %rsp                 /* restore stack pointer */
+	ret
+```
+
+Note that the function above also illustrates what we consider to be an appropriate amount of detail for code comments.
 
 ## Task 5: Unit tests for assembly postfix calculator
 
