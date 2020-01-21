@@ -297,3 +297,11 @@ You will need to add function prototypes for your assembly functions.  If your a
 Even better, if your assembly functions are equivalent to your C functions, *you can copy the actual tests*.  So, the unit tests for your assembly functions will likely be similar (or even identical) to the unit tests for your C functions.
 
 Note that the technique for testing functions on invalid input explained in [Task 2](#task-2-unit-tests-for-c-postfix-calculator) can also be used in the unit tests for your assembly language functions.
+
+# Submitting
+
+To submit your work:
+
+* Run the command `make solution.zip`
+* Upload `solution.zip` to [Gradescope](https://www.gradescope.com/) as **Assignment2**
+* Please check the files you uploaded to make sure they are the ones you intended to submit
