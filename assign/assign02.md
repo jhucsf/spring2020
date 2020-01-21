@@ -15,7 +15,7 @@ The grading breakdown is:
 * Assembly version of postfix calculator: 60%
 * Unit tests (for both versions): 10%
 * System tests (for both versions): 10%
-* Design and coding style (for both versions): 10%
+* Design and coding style (for both versions): 10% (see the [style guidelines](style.html))
 
 This is a challenging assignment.  Don't wait until the last minute to start it!  As usual, ask questions using Piazza, come to office hours, etc.
 

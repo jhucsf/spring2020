@@ -13,7 +13,7 @@ The grading breakdown is as follows:
 
 * Impementation of data type and functions: 60%
 * Unit tests: 30%
-* Design and coding style: 10%
+* Design and coding style: 10% (see the [style guidelines](style.html))
 
 ## Getting started
 

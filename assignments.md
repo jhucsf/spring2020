@@ -16,6 +16,8 @@ Some advice about the programming assignments:
 * Use good programming practices
 * Test your code thoroughly (plan to spend about as much time testing the code as writing it)
 
+Please read the [style guidelines](assign/style.html) so that you know what our coding style expectations are.
+
 Assignment | Due
 ---------- | ---
 [Assignment 1: Arbitrary-precision arithmetic](assign/assign01.html) | Friday, Feb 7 by 11pm
