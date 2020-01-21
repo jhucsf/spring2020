@@ -23,6 +23,18 @@ This is a challenging assignment.  Don't wait until the last minute to start it!
 
 When you are done with this assignment you will have proved yourself capable of writing nontrivial x86-64 assembly code.  This is a foundational skill for hacking on operating systems and compilers, understanding security vulnerabilities such as buffer overflows, and generally becoming one with the machine.
 
+## Getting started
+
+Get started by downloading [csf\_assign02.zip](csf_assign02.zip) and extracting it using the `unzip` command.
+
+You can download this file from a Linux command prompt using the `curl` command:
+
+```bash
+curl -O https://jhucsf.github.io/spring2020/assign/csf_assign02.zip
+```
+
+Note that in the `-O` option, it is the letter "O", not the numeral "0".
+
 # Postfix arithmetic
 
 Normally when we express arithmetic we use *infix notation*, where binary operators (such as +, -, etc.) are placed between their operands.  For example, to expression the addition of the operands 2 and 3, we would write
