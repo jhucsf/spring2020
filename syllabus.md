@@ -76,7 +76,8 @@ meetings.
 Your course grade will be determined as follows:
 
 * Programming assignments: 55%
-* Exams: 40%
+* Midterm exam: 20%
+* Final exam: 20%
 * Clicker quizzes: 5%
 
 ## Late Days
