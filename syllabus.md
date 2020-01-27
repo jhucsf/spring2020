@@ -88,8 +88,9 @@ graded for *participation only*.  In order to receive full credit for the
 clicker quiz portion of the course grade, you need to participate in
 at least 85% of the clicker quizzes.
 
-If you do not have an iClicker remote, they are available at the JHU
-Barnes and Noble and the Johns Hopkins Technology Store.
+If you do not have an iClicker remote, they are available at the [JHU
+Barnes and Noble](https://johns-hopkins.bncollege.com/shop/johns-hopkins/home)
+and the [Johns Hopkins Technology Store](https://studentaffairs.jhu.edu/computing/hopkins-technology-store/).
 
 Please let us know your iClicker's remote ID using the Google form linked
 in the **General Resources** section of the **Resources** tab on the course's
