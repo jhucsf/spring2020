@@ -80,6 +80,21 @@ Your course grade will be determined as follows:
 * Final exam: 20%
 * Clicker quizzes: 5%
 
+## Clicker quizzes
+
+You will need to bring an iClicker remote to each class meeting in order to
+participate in peer instruction quizzes.  Note that these quizzes are
+graded for *participation only*.  In order to receive full credit for the
+clicker quiz portion of the course grade, you need to participate in
+at least 85% of the clicker quizzes.
+
+If you do not have an iClicker remote, they are available at the JHU
+Barnes and Noble and the Johns Hopkins Technology Store.
+
+Please let us know your iClicker's remote ID using the Google form linked
+in the **General Resources** section of the **Resources** tab on the course's
+Piazza site.
+
 ## Late Days
 
 You have a total of 5 *late days* to use as needed for homework assignments
