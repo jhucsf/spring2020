@@ -19,4 +19,5 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Jan 27** — [Assignment 1](assign/assign01.html) is due by 11pm on **Friday, Feb 7th**.
 * **Jan 27** — Welcome back! We hope you had a great winter break.
