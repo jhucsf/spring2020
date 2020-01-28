@@ -18,7 +18,7 @@ Week 1 (Jan 27–31) | Course overview, binary data representation review [slide
 Week 2 (Feb 3–7)   | Integer arithmetic [slides](lectures/lecture04-public.pdf) | 2.3 |
                    | Floating point [slides](lectures/lecture05-public.pdf) | 2.4 |
                    | Machine-level program representation [slides](lectures/lecture06-public.pdf) | 3.1–3.4
-Week 3 (Feb 10–14) | ALU operations, arithmetic | 3.5 |
+Week 3 (Feb 10–14) | ALU operations, arithmetic [slides](lectures/lecture07-public.pdf), [alu.zip (example code)](alu.zip) | 3.5 |
                    | Control flow, stacks | 3.6–3.7 |
                    | Assembly language in-class exercise | 
 Week 4 (Feb 17–21) | Arrays and structs | 3.8–3.9
