@@ -5,6 +5,8 @@ title: "Assignment 1: Arbitrary-precision arithmetic"
 
 **Due:** Friday, Feb 7 by 11pm
 
+*Update 1/29*: Posted fact-generation script to help with [testing](#task-3-unit-testing)
+
 # Overview
 
 In this assignment you will implement a simple C library for arbitrary-precision integer arithmetic.
@@ -202,6 +204,49 @@ free(s);
 ```
 
 As part of generating tests, it will be helpful to have a language or tool that can do arbitrary-precision arithmetic.  Options include Python and the Unix `bc` program.
+
+*Update 1/29* [genfact.rb](genfact.rb) is a Ruby program which generates arithmetic facts that you can use for testing.  Run it as follows:
+
+```bash
+ruby genfact.rb
+```
+
+It will output an addition fact, subtraction fact, or inequality.  You can take the generated fact and turn it into a test case.  For example, the inequality
+
+```
+962d7e839ed2d377 < 8e11539c5ea7a510656b3fcc5403c83b91229139ab28bce
+```
+
+could be converted into the following test code:
+
+```c
+a = apint_create_from_hex("962d7e839ed2d377");
+b = apint_create_from_hex("8e11539c5ea7a510656b3fcc5403c83b91229139ab28bce");
+ASSERT(apint_compare(a, b) < 0);
+apint_destroy(b);
+apint_destroy(a);
+```
+
+The script-generated addition fact
+
+```
+d4fa6f0b63ad80a34b93b74d + 3935dcebf95bdf = d4fa6f0b63e6b680378d132c
+```
+
+could be converted into the following test code:
+
+```c
+a = apint_create_from_hex("d4fa6f0b63ad80a34b93b74d");
+b = apint_create_from_hex("3935dcebf95bdf");
+sum = apint_add(a, b);
+ASSERT(0 == strcmp("d4fa6f0b63e6b680378d132c", (s = apint_format_as_hex(sum))));
+apint_destroy(sum);
+apint_destroy(b);
+apint_destroy(a);
+free(s);
+```
+
+Feel free to use [genfact.rb](genfact.rb) as a basis for generating unit tests.
 
 *Use gdb to investigate bugs.* When a test fails, use `gdb` to help determine the reason for the failure.  Set breakpoints at the program location just prior to the point where the program state becomes corrupted.  Single step and inspect variables to understand what the code is doing.
 
