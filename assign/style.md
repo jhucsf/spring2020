@@ -122,3 +122,7 @@ Use problem-domain-specific data types as appropriate.  For example, in a file s
 ```c
 ssize_t file_resource_get_size(struct FileResource *res);
 ```
+
+## Memory correctness
+
+We expect that all code written in memory-unsafe languages such as C and C++ to execute without any memory errors or memory leaks.  Make sure that you use tools such as [valgrind](https://valgrind.org/) when testing your programs.  In general, we will deduct points for code that does not execute cleanly in valgrind, or exhibits other types of memory errors at runtime.

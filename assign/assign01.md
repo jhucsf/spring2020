@@ -7,6 +7,8 @@ title: "Assignment 1: Arbitrary-precision arithmetic"
 
 *Update 1/29*: Posted fact-generation script to help with [testing](#task-3-unit-testing)
 
+*Update 1/30*: Important [Makefile](assign01/Makefile) fix posted (see [Submitting](#submitting)); information about [autograder](#autograder) posted
+
 # Overview
 
 In this assignment you will implement a simple C library for arbitrary-precision integer arithmetic.
@@ -266,3 +268,30 @@ To submit your work:
 * Run the command `make solution.zip`
 * Upload `solution.zip` to [Gradescope](https://www.gradescope.com/) as **Assignment1**
 * Please check the files you uploaded to make sure they are the ones you intended to submit
+
+*Update 1/30* There is an issue with the `Makefile` posted in the original version of the assignment skeleton: the `make solution.zip` command would not rebuild the zipfile even if files had changed.  You can fix the `solution.zip` target by changing the original target
+
+```make
+solution.zip :
+	rm -f solution.zip
+	zip -9r $@ Makefile *.h *.c
+```
+
+to the following:
+
+```make
+.PHONY: solution.zip
+solution.zip :
+	rm -f solution.zip
+	zip -9r $@ Makefile *.h *.c
+```
+
+You can also download a fixed version of the makefile: [Makefile](assign01/Makefile)
+
+## Autograder
+
+When you upload your submission to Gradescope, it will be tested by the autograder, which executes unit tests for each required function.  Please note the following:
+
+* Only the "Impementation of data type and functions" rubric item is autograder
+* If your code does not compile successfully, all of the tests will fail
+* The autograder runs `valgrind` on your code, but it does *not* report any information about the result of running `valgrind`: points will be deducted if your code has memory errors or memory leaks!
