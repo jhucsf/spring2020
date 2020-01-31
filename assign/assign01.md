@@ -9,6 +9,8 @@ title: "Assignment 1: Arbitrary-precision arithmetic"
 
 *Update 1/30*: Important [Makefile](assign01/Makefile) fix posted (see [Submitting](#submitting)); information about [autograder](#autograder) posted
 
+*Update 1/31*: [Makefile](assign01/Makefile) updated to use `-lm` option to link test executable (`apintTests`) with the math library.
+
 # Overview
 
 In this assignment you will implement a simple C library for arbitrary-precision integer arithmetic.

@@ -13,7 +13,7 @@ CFLAGS = -g -Wall -Wextra -pedantic -std=gnu11
 all : apintTests
 
 apintTests : apintTests.o apint.o tctest.o
-	gcc -o $@ apintTests.o apint.o tctest.o
+	gcc -o $@ apintTests.o apint.o tctest.o -lm
 
 # Use this target to create a zipfile that you can submit to Gradescope
 .PHONY: solution.zip
