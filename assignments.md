@@ -20,6 +20,6 @@ Please read the [style guidelines](assign/style.html) so that you know what our 
 
 Assignment | Due
 ---------- | ---
-[Assignment 1: Arbitrary-precision arithmetic](assign/assign01.html) | Friday, Feb 7 by 11pm
+[Assignment 1: Arbitrary-precision arithmetic](assign/assign01.html) | <strike>Friday, Feb 7</strike> Tuesday, Feb 11 by 11pm
 [Assignment 2: Postfix calculator](assign/assign02.html) | Wednesday, February 26 by 11pm
 [Assignment 3: Cache simulator, code optimization](assign/assign03.html) | TBD

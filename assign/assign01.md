@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 1: Arbitrary-precision arithmetic"
 ---
 
-**Due:** Friday, Feb 7 by 11pm
+**Due:** <strike>Friday, Feb 7</strike> Tuesday, Feb 11 by 11pm
 
 *Update 1/29*: Posted fact-generation script to help with [testing](#task-3-unit-testing)
 
