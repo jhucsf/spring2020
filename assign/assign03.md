@@ -3,6 +3,8 @@ layout: default
 title: "Assignment 3: Cache simulator, code optimization"
 ---
 
+*Note that this assignment description is preliminary, and is likely to change*
+
 # Part 1: Cache simulator
 
 **Acknowledgment**: This problem was originally developed by
