@@ -85,7 +85,7 @@ The following commands show assembling and testing the "real" program (user inpu
 <div class="highlighter-rouge"><pre>
 $ <b>gcc -c -g -no-pie -o hist.o hist.S</b>
 $ <b>gcc -no-pie -o hist hist.o</b>
-$ ./hist
+$ <b>./hist</b>
 Enter 20 integer values: <b>4 95 31 79 43 77 49 19 93 84 13 62 84 30 42 67 23 1 81 95</b>
 Histogram:
 4
@@ -99,7 +99,7 @@ Note that the histogram output is showing the number of input values in each ran
 
 ## Tips and suggestions
 
-The easiest way to allocate storage for the arrays is to make them global variables in the `.bss` segment.  For example:
+*Allocating storage*. The easiest way to allocate storage for the arrays is to make them global variables in the `.bss` segment.  For example:
 
 ```
 .section .bss
@@ -111,8 +111,40 @@ would reserve space for 20 8-byte (64-bit) integer values.  Storage allocated in
 
 If you want a challenge, allocate the arrays on the stack.  The frame pointer register (`%rbp`) can help you keep track of stack-allocated storage: see [Lecture 8](../lectures/lecture08-public.pdf).
 
-TODO: using callee-save registers as loop variables
+*Use callee-saved registers for variables.* You can use callee-saved registers as variables in your computation.  Callee-saved registers have the significant advantage (over caller-saved registers) of being preserved accross procedure calls.  Make sure that you push their original values onto the stack before modifying them, and restore their original values from the stack when they are no longer needed.  For example, let's say that your entire computation is implemented in `main`, and you intend to use `%r12` and `%r13` as variables.  You could put the following code at the beginning of `main`:
 
-TODO: advice about accessing array elements
+```
+pushq %r12
+pushq %r13
+```
 
-TODO: advice about using gdb for testing and debugging
+Then, put the following code near the end of `main` (just before the `ret` instruction at the very end):
+
+```
+popq %r13
+popq %r12
+```
+
+Note that values must be popped from the the stack in the reverse of the order in which they were pushed. (It's a stack!)
+
+Don't forget that the stack pointer (`%rsp`) must be an exact multiple of 16 at the point of any `call` instruction.  Each `push` of a 64 bit value will decrease `%rsp` by 8.
+
+*Accessing array elements*. One challenge in this exercise is accessing array elements.  Assuming you use 64-bit integers, each array element will occupy 8 bytes of storage.  The indexed/scaled addressing mode is very convenient for directly accessing an array element based on its displacement from the array's base address.  Let's say that `%r12` contains the base address of the array (i.e., it points to the first element of the array), and that `%r13` contains the index of an element.  You can store the address of the chosen element in `%rsi` with the instruction
+
+```
+leaq (%r12,%r13,8), %rsi
+```
+
+You can load the value of the chosen element into `%rsi` with the instruction
+
+```
+movq (%r12,%r13,8), %rsi
+```
+
+Note that when specifying the address of a global variable or array, prefix it with `$` (because you're referring to the constant address of the variable, not referring to the contents of the variable.)  For example, to load the base address of the array called `dataValues` into the `%r12` register, you would use the following instruction:
+
+```
+movq $dataValues, %r12
+```
+
+*Use gdb*. Use `gdb` to trace through the execution of your program.  The [Resources](../resources.html) page has links to some useful information about using `gdb` to debug assembly language.
