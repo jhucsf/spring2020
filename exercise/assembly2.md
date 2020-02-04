@@ -1,17 +1,15 @@
 ---
 layout: default
-title: "Assembly language exercise"
+title: "Assembly language exercise 2"
 ---
 
 # Getting started
 
-This is an in-class assembly language exercise.
-
-You should work in groups of 2 or 3 people (form a group with classmates who are sitting near you.)
+This is an optional assembly language exercise.  It's intended to provide you with and opportunity to practice writing x86-64 assembly language code.
 
 # Task
 
-You will write an x86-64 assembly language program that does the following:
+Your task is to write an x86-64 assembly language program that does the following:
 
 1. Read 20 integer values into an array (you can represent them as either 32 bit or 64 bit, and the program should allow both positive and negative values)
 2. Iterate through the array and keep track of how many values are in each of the following ranges: 0-19, 20-39, 40-59, 60-79, 81-99
@@ -19,7 +17,7 @@ You will write an x86-64 assembly language program that does the following:
 
 A good first milestone would be to write a program that reads the values into an array, and then just prints them out and exits.
 
-Doing the full program (steps 1–3) is quite challenging!
+Doing the full program (steps 1–3) is fairly challenging!
 
 ## Hello, world
 
@@ -67,7 +65,7 @@ vim:ft=gas:
 */
 ```
 
-## Assembling and testing
+## Assembling the Hello, world program
 
 You can assemble and run the Hello, world program as follows (user input shown in **bold**):
 
@@ -79,6 +77,25 @@ Hello, world!
 Enter an integer: <b>42</b>
 You entered: 42
 </pre></div>
+
+## Assembling and testing the real program
+
+The following commands show assembling and testing the "real" program (user input shown in **bold**).  It assumes the code is in a file called `hist.S`.
+
+<div class="highlighter-rouge"><pre>
+$ <b>gcc -c -g -no-pie -o hist.o hist.S</b>
+$ <b>gcc -no-pie -o hist hist.o</b>
+$ ./hist
+Enter 20 integer values: <b>4 95 31 79 43 77 49 19 93 84 13 62 84 30 42 67 23 1 81 95</b>
+Histogram:
+4
+3
+3
+4
+6
+</pre></div>
+
+Note that the histogram output is showing the number of input values in each range (0-19, 20-39, etc.)
 
 ## Tips and suggestions
 
