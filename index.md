@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Feb 4** — An alternate Linux VM image (which may be more appropriate if you have limited disk space) has been posted on the [Resources](resources.html) page.
 * **Feb 3** — The due date for [Assignment 1](assign/assign01.html) has been moved to 11pm on **Tuesday, Feb 11th**.
 * **Jan 30** — [Assignment 1](assign/assign01.html) has been updated to fix a `Makefile` issue, and provide information about the Gradescope autograder.
 * **Jan 29** — [Assignment 1](assign/assign01.html) has been updated with a script to help with automatic generation of unit tests.
