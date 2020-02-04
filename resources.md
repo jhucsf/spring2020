@@ -6,7 +6,19 @@ category: "resources"
 
 This page has links to useful resources.
 
+# Information
+
+This section has links to some information resources you might find useful.
+
+# x86-64 assembly programming resources
+
+* [Brown x64 cheat sheet](https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf)
+* [Brown gdb cheat sheet](https://cs.brown.edu/courses/cs033/docs/guides/gdb.pdf)
+* [CMU summary of gdb commands for x86-64](http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf)
+
 # Software
+
+This section covers the software you'll be using in working on programming assignments.
 
 ## Linux
 
