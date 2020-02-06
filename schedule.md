@@ -20,7 +20,7 @@ Week 2 (Feb 3–7)   | Integer arithmetic [slides](lectures/lecture04-public.pdf
 &nbsp;             | Machine-level program representation [slides](lectures/lecture06-public.pdf) | 3.1–3.4
 Week 3 (Feb 10–14) | ALU operations, arithmetic [slides](lectures/lecture07-public.pdf), [alu.zip (example code)](lectures/alu.zip) | 3.5
 &nbsp;             | Control flow [slides](lectures/lecture08-public.pdf), [control.zip (example code)](lectures/control.zip) | 3.6 |
-                   | Procedures, stacks | 3.7
+&nbsp;             | Procedures, stacks [slides](lectures/lecture09-public.pdf), [control2.zip (example code)](lectures/control2.zip) | 3.7
 Week 4 (Feb 17–21) | Assembly language in-class exercise | 
                    | Arrays and structs | 3.8–3.9
                    | Code and data interactions, buffer overflows | 3.10
