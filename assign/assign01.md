@@ -95,6 +95,8 @@ ApInt *apint_sub(const ApInt *a, const ApInt *b);
 int apint_compare(const ApInt *left, const ApInt *right);
 ```
 
+Note that all of the functions declared as returning `ApInt *` must return a pointer to a dynamically allocated instance of `ApInt` that will be deallocated by a subsequent call to `apint_destroy`.
+
 Here are brief descriptions of the expected behavior of these functions.
 
 `apint_create_from_u64`: Returns a pointer to an `ApInt` instance whose value is specified by the `val` parameter, which is a 64-bit unsigned value.
