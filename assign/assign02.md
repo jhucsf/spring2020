@@ -3,7 +3,9 @@ layout: default
 title: "Assignment 2: Postfix calculator"
 ---
 
-Due: *TBD*
+Due: Wednesday, February 26th by 11pm
+
+*Update 2/10*: corrected a typo in the example `cPostfixCalc` invocations
 
 # Overview
 
@@ -55,18 +57,18 @@ This expression would be evaluated as follows:
 
 Item | Action
 ---- | ------
-`3`    | Push 3 onto stack
-`4`    | Push 4 onto stack
-`5`    | Push 5 onto stack
-`+`    | Pop operands 5 and 4, add them, push sum 9
-`*`   | Pop operands 9 and 3, multiply them, push product 27
+`3`  | Push 3 onto stack
+`4`  | Push 4 onto stack
+`5`  | Push 5 onto stack
+`+`  | Pop operands 5 and 4, add them, push sum 9
+`*`  | Pop operands 9 and 3, multiply them, push product 27
 
 When any valid postfix expression is evaluated, the stack will have a single result value when the end of the expression is reached.  Also, valid postfix expressions will guarantee that operand values are always available on the stack when an operator is processed.  Here are some examples of *invalid* postfix expressions:
 
 Expression | Why invalid
 ---------- | -----------
-`10 2 - *`   | Only one operand value is on stack when operator \* is processed
-`2 3 + 4`    | Two operand values are on stack when end of expression is reached
+`10 2 - *` | Only one operand value is on stack when operator \* is processed
+`2 3 + 4`  | Two operand values are on stack when end of expression is reached
 
 # Tasks
 
@@ -111,7 +113,7 @@ Invocation | Expected output
 `./cPostfixCalc '7 2 -'` | `Result is: 5`
 `./cPostfixCalc '3 4 5 + *'` | `Result is: 27`
 `./cPostfixCalc '17 3 /'` | `Result is: 5`
-`./cPostfixCalc '3 10 /'` | `Result is: -7`
+`./cPostfixCalc '3 10 /'` | `Result is: 0`
 `./cPostfixCalc '2 3 4 5 +-*'` | `Result is: -12`
 `./cPostfixCalc '10 2 - *'` | `Error: ...`
 `./cPostfixCalc '2 3 + 4'` | `Error: ...`
