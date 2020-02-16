@@ -7,22 +7,22 @@ title: "Assembly language exercise"
 
 Your task in this exercise is to write an x86-64 assembly language program
 which reads 10 integer values from the user, stores them in an array,
-computes their sum, and prints the sum.
+finds the maximum value, and then prints the maximum value.
 
-Note that it's not sufficient to simply compute a running sum of input values:
-the program should first store the 10 input values in an array, then
-compute the sum from the values in the array.
+Note that it's not sufficient to simply keep track of the maximum value
+as values are read: the program should first store the 10 input values
+in an array, then find the maximum from the values in the array.
 
 Here is an example session showing assembling and running the program
 (user input in **bold**):
 
 <div class="highlighter-rouge"><pre>
-$ <b>make arraySum</b>
-gcc -c -g -no-pie -o arraySum.o arraySum.S
-gcc -no-pie -o arraySum arraySum.o
-$ <b>./arraySum</b>
-Enter 10 integer values: <b>52 90 75 6 38 90 10 10 88 32</b>
-Sum is 491
+$ <b>make arrayMax</b>
+gcc -c -g -no-pie -o arrayMax.o arrayMax.S
+gcc -no-pie -o arrayMax arrayMax.o
+$ <b>./arrayMax</b>
+Enter 10 integer values: <b>3 2 61 35 74 73 70 7 94 53</b>
+Max is 94
 </pre></div>
 
 If you finish this task and are looking for a more challenging task,
@@ -32,8 +32,8 @@ you can try the [second assembly language exercise](assembly2.html).
 
 Download the following zipfile and unzip it: [asmExercise.zip](asmExercise.zip)
 
-Make your changes to `arraySum.S`.  You can assemble the program using the
-command `make arraySum`.  Run it using the command `./arraySum`.
+Make your changes to `arrayMax.S`.  You can assemble the program using the
+command `make arrayMax`.  Run it using the command `./arrayMax`.
 
 An example assembly language program `hello.S` is provided.  You can assemble
 it using the command `make hello` and run it using the command `./hello`.
@@ -43,8 +43,9 @@ it using the command `make hello` and run it using the command `./hello`.
 *Allocating storage*. The easiest way to allocate storage for the arrays is to make them global variables in the `.bss` segment.  For example:
 
 ```
-.section .bss
+	.section .bss
 
+	.align 8
 dataValues: .space (10 * 8)
 ```
 
