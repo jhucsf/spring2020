@@ -9,6 +9,8 @@ Due: Wednesday, February 26th by 11pm
 
 *Update 2/13*: added explanatory comments for suggested functions
 
+*Update 2/16*: Corrected assignment skeleton to make sure `-g` compiler option is used to enable debugging
+
 # Overview
 
 In this assignment, you will implement a postfix calculator program in x86-64 assembly language.
@@ -38,6 +40,14 @@ curl -O https://jhucsf.github.io/spring2020/assign/csf_assign02.zip
 ```
 
 Note that in the `-O` option, it is the letter "O", not the numeral "0".
+
+*Update 2/16*: The `Makefile` in the original version of the assignment skeleton did not enable debugging support.  If you are using the original assignment skeleton, please edit your `Makefile` and change the `CFLAGS`, `ASMFLAGS`, and `LDFLAGS` definitions as follows:
+
+```make
+CFLAGS = -Og -g -Wall -no-pie
+ASMFLAGS = -g -no-pie
+LDFLAGS = -g -no-pie
+```
 
 # Postfix arithmetic
 
