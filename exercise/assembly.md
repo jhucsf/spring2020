@@ -69,7 +69,7 @@ popq %r12
 
 Note that values must be popped from the the stack in the reverse of the order in which they were pushed. (It's a stack!)
 
-Don't forget that the stack pointer (`%rsp`) must be an exact multiple of 16 at the point of any `call` instruction.  Each `push` of a 64 bit value will decrease `%rsp` by 8.
+Don't forget that the stack pointer (`%rsp`) must be an exact multiple of 16 at the point of any `call` instruction.  Each `push` of a 64 bit value will decrease `%rsp` by 8.  Depending on how many `pushq`/`popq` instructions you have, you may need to adjust the stack pointer using `subq $8, %rsp` and `addq $8, %rsp` to ensure correct stack alignment.
 
 *Accessing array elements*. One challenge in this exercise is accessing array elements.  Assuming you use 64-bit integers, each array element will occupy 8 bytes of storage.  The indexed/scaled addressing mode is very convenient for directly accessing an array element based on its displacement from the array's base address.  Let's say that `%r12` contains the base address of the array (i.e., it points to the first element of the array), and that `%r13` contains the index of an element.  You can store the address of the chosen element in `%rsi` with the instruction
 
@@ -83,10 +83,10 @@ You can load the value of the chosen element into `%rsi` with the instruction
 movq (%r12,%r13,8), %rsi
 ```
 
-Note that when specifying the address of a global variable or array, prefix it with `$` (because you're referring to the constant address of the variable, not referring to the contents of the variable.)  For example, to load the base address of the array called `dataValues` into the `%r12` register, you would use the following instruction:
+Note that when specifying the address of a global variable or array, prefix it with `$` (because you're referring to the constant address of the variable, not referring to the data stored in the variable.)  For example, to load the base address of the array called `dataValues` into the `%r12` register, you would use the following instruction:
 
 ```
 movq $dataValues, %r12
 ```
 
-*Use gdb*. Use `gdb` to trace through the execution of your program.  The [Resources](../resources.html) page has links to some useful information about using `gdb` to debug assembly language.
+*Use gdb*. Use `gdb` to trace through the execution of your program.  The [Resources](../resources.html) page has links to some useful information about using `gdb` to debug assembly language.  [Lecture 8](../lectures/lecture08-public.pdf) also has some useful `gdb` tips on the last two pages.
