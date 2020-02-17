@@ -40,7 +40,7 @@ it using the command `make hello` and run it using the command `./hello`.
 
 # Tips and suggestions
 
-*Allocating storage*. The easiest way to allocate storage for the arrays is to make them global variables in the `.bss` segment.  For example:
+*Allocating storage*. The easiest way to allocate storage for the array is to make it a global variable in the `.bss` segment.  For example:
 
 ```
 	.section .bss
@@ -49,7 +49,7 @@ it using the command `make hello` and run it using the command `./hello`.
 dataValues: .space (10 * 8)
 ```
 
-would reserve space for 10 8-byte (64-bit) integer values.  Storage allocated in the `.bss` segment is guaranteed to be filled with zeroes.
+would reserve space for 10 8-byte (64-bit) values.  Storage allocated in the `.bss` segment is guaranteed to be filled with zeroes.
 
 If you want a challenge, allocate the arrays on the stack.  The frame pointer register (`%rbp`) can help you keep track of stack-allocated storage: see [Lecture 8](../lectures/lecture08-public.pdf).
 
