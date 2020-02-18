@@ -12,20 +12,20 @@ The links to slides are provided for reference.  In general, there is no guarant
 
 Date               | Topic/Slides | Reading
 ------------------ | ----- | ------- | ------------
-Week 1 (Jan 27–31) | Course overview, binary data representation review [slides](lectures/lecture01-public.pdf) | 1.1–1.9
-&nbsp;             | Data representation, addresses [slides](lectures/lecture02-public.pdf) | 2.1
-&nbsp;             | Integer representation [slides](lectures/lecture03-public.pdf) | 2.2
-Week 2 (Feb 3–7)   | Integer arithmetic [slides](lectures/lecture04-public.pdf) | 2.3 |
-&nbsp;             | Floating point [slides](lectures/lecture05-public.pdf) | 2.4 |
-&nbsp;             | Machine-level program representation [slides](lectures/lecture06-public.pdf) | 3.1–3.4
-Week 3 (Feb 10–14) | ALU operations, arithmetic [slides](lectures/lecture07-public.pdf), [alu.zip (example code)](lectures/alu.zip) | 3.5
-&nbsp;             | Control flow [slides](lectures/lecture08-public.pdf), [control.zip (example code)](lectures/control.zip) | 3.6 |
-&nbsp;             | Procedures, stacks [slides](lectures/lecture09-public.pdf), [control2.zip (example code)](lectures/control2.zip) | 3.7
+Week 1 (Jan 27–31) | Course overview, binary data representation review: [slides](lectures/lecture01-public.pdf) | 1.1–1.9
+&nbsp;             | Data representation, addresses: [slides](lectures/lecture02-public.pdf) | 2.1
+&nbsp;             | Integer representation: [slides](lectures/lecture03-public.pdf) | 2.2
+Week 2 (Feb 3–7)   | Integer arithmetic: [slides](lectures/lecture04-public.pdf) | 2.3 |
+&nbsp;             | Floating point: [slides](lectures/lecture05-public.pdf) | 2.4 |
+&nbsp;             | Machine-level program representation: [slides](lectures/lecture06-public.pdf) | 3.1–3.4
+Week 3 (Feb 10–14) | ALU operations, arithmetic: [slides](lectures/lecture07-public.pdf), [alu.zip (example code)](lectures/alu.zip) | 3.5
+&nbsp;             | Control flow: [slides](lectures/lecture08-public.pdf), [control.zip (example code)](lectures/control.zip) | 3.6 |
+&nbsp;             | Procedures, stacks: [slides](lectures/lecture09-public.pdf), [control2.zip (example code)](lectures/control2.zip) | 3.7
 Week 4 (Feb 17–21) | [Assembly language in-class exercise](exercise/assembly.html) | 
-&nbsp;             | Arrays and structs [slides](lectures/lecture10-public.pdf), [arraystruct.zip (example code)](lectures/arraystruct.zip) | 3.8–3.9
-                   | Code and data interactions, buffer overflows | 3.10
+&nbsp;             | Arrays and structs: [slides](lectures/lecture10-public.pdf), [arraystruct.zip (example code)](lectures/arraystruct.zip) | 3.8–3.9
+&nbsp;             | Code and data interactions, buffer overflows: [slides](lectures/lecture11-public.pdf), [buf.zip (example code)](lectures/buf.zip)  | 3.10
 Week 5 (Feb 24–28) | Program optimization (basic techniques) | 5.1–5.8 |
-                   | Pipelines | TBD
+                   | Pipelines | Patterson&amp;Hennessy 4.5–4.7
                    | Program optimization (ILP, memory, profiling) | 5.9–5.14
 Week 6 (Mar 2–6)   | Memory hierarchy | 6.1–6.3 |
                    | Caches | 6.4
