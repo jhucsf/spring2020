@@ -28,6 +28,10 @@ Max is 94
 If you finish this task and are looking for a more challenging task,
 you can try the [second assembly language exercise](assembly2.html).
 
+# Solution
+
+Here is a solution: [asmExerciseSoln.zip](asmExerciseSoln.zip)
+
 # Getting started
 
 Download the following zipfile and unzip it: [asmExercise.zip](asmExercise.zip)

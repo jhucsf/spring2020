@@ -10,11 +10,19 @@ This page has links to useful resources.
 
 This section has links to some information resources you might find useful.
 
-# x86-64 assembly programming resources
+## x86-64 assembly programming resources
 
 * [Brown x64 cheat sheet](https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf)
 * [Brown gdb cheat sheet](https://cs.brown.edu/courses/cs033/docs/guides/gdb.pdf)
 * [CMU summary of gdb commands for x86-64](http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf)
+
+# Exercises and practice problems
+
+This section links to exercises, practice problems, and similar resources.
+
+* [Assembly language exercise](exercise/assembly.html), [solution](exercise/asmExerciseSoln.zip)
+* [Assembly language exercise 2 (more challenging)](exercise/assembly2.html)
+* [Assembly language mini-exercises](exercise/assemblyMini.html)
 
 # Software
 

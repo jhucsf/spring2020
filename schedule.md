@@ -21,7 +21,7 @@ Week 2 (Feb 3–7)   | Integer arithmetic: [slides](lectures/lecture04-public.pd
 Week 3 (Feb 10–14) | ALU operations, arithmetic: [slides](lectures/lecture07-public.pdf), [alu.zip (example code)](lectures/alu.zip) | 3.5
 &nbsp;             | Control flow: [slides](lectures/lecture08-public.pdf), [control.zip (example code)](lectures/control.zip) | 3.6 |
 &nbsp;             | Procedures, stacks: [slides](lectures/lecture09-public.pdf), [control2.zip (example code)](lectures/control2.zip) | 3.7
-Week 4 (Feb 17–21) | [Assembly language in-class exercise](exercise/assembly.html) | 
+Week 4 (Feb 17–21) | [Assembly language in-class exercise](exercise/assembly.html), [solution](exercise/asmExerciseSoln.zip) | 
 &nbsp;             | Arrays and structs: [slides](lectures/lecture10-public.pdf), [arraystruct.zip (example code)](lectures/arraystruct.zip) | 3.8–3.9
 &nbsp;             | Code and data interactions, buffer overflows: [slides](lectures/lecture11-public.pdf), [buf.zip (example code)](lectures/buf.zip)  | 3.10
 Week 5 (Feb 24–28) | Program optimization (basic techniques) | 5.1–5.8 |
