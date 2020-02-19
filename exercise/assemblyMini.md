@@ -7,6 +7,8 @@ title: "Assembly language mini exercises"
 
 This page has some suggested assembly language mini exercises.  We will be updating these with solutions.
 
+Starter project containing `Makefile` and hello world example program: [asmMini.zip](asmMini.zip)
+
 ## Count to 10
 
 Write an assembly language program that prints the integers from 1 to 10.
