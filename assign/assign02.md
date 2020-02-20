@@ -11,6 +11,8 @@ Due: Wednesday, February 26th by 11pm
 
 *Update 2/16*: Corrected assignment skeleton to make sure `-g` compiler option is used to enable debugging
 
+*Update 2/20*: Added link to [gentest.rb](assign02/gentest.rb) script; see [Task 3](#task-3-system-level-tests)
+
 # Overview
 
 In this assignment, you will implement a postfix calculator program in x86-64 assembly language.
@@ -222,6 +224,15 @@ You should add your own tests.  As with the unit tests, try to think of corner c
 To run the system tests on your C postfix calculator implementation, run the command
 
 > `./sysTests.sh ./cPostfixCalc`
+
+*Update 2/20*: To help you generate some interesting tests, you may use the following Ruby script: [gentest.rb](assign02/gentest.rb).  Example invocation:
+
+```
+$ ruby gentest.rb
+expect 109 '4 15 7 * +'
+```
+
+Please note that these automatically-generated tests are *not* a substitute for writing your own tests.  For example, the script only generates valid postfix expressions, but you should also write tests for various kinds of invalid expressions.
 
 ## Task 4: Postfix calculator in assembly
 
