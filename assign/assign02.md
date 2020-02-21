@@ -13,6 +13,8 @@ Due: Wednesday, February 26th by 11pm
 
 *Update 2/20*: Added link to [gentest.rb](assign02/gentest.rb) script; see [Task 3](#task-3-system-level-tests)
 
+*Update 2/21*: Added link to [idiv.zip](assign02/idiv.zip), a program demonstrating how to do 64-bit signed division
+
 # Overview
 
 In this assignment, you will implement a postfix calculator program in x86-64 assembly language.
@@ -328,6 +330,8 @@ strLen:
 ```
 
 Note that the function above also illustrates what we consider to be an appropriate amount of detail for code comments.
+
+*Use cqto before idivq*.  Before using the `idivq` instruction to do integer division, use the `cqto` instruction to sign extend the dividend (which should be stored in the `%rax` register) into the `%rdx` register. Download the [idiv.zip](assign02/idiv.zip) example program for a full example.
 
 ## Task 5: Unit tests for assembly postfix calculator
 
