@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 2: Postfix calculator"
 ---
 
-Due: Wednesday, February 26th by 11pm
+Due: <strike>Wednesday, February 26th</strike> Tuesday, March 3rd by 11pm
 
 *Update 2/10*: corrected a typo in the example `cPostfixCalc` invocations
 
