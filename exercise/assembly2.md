@@ -26,15 +26,16 @@ Here is a simple assembly language program that you can use as a template:
 ```
 /* hello.S */
 
-.section .rodata
+	.section .rodata
 
 sHelloMsg:  .string "Hello, world!\n"
 sPromptMsg: .string "Enter an integer: "
 sInputFmt:  .string "%ld"
 sResultMsg: .string "You entered: %ld\n"
 
-.section .bss
+	.section .bss
 
+	.align 8
 num: .space 8
 
 .section .text
@@ -102,8 +103,9 @@ Note that the histogram output is showing the number of input values in each ran
 *Allocating storage*. The easiest way to allocate storage for the arrays is to make them global variables in the `.bss` segment.  For example:
 
 ```
-.section .bss
+	.section .bss
 
+	.align 8
 dataValues: .space (20 * 8)
 ```
 
