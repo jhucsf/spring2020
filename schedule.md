@@ -25,7 +25,7 @@ Week 4 (Feb 17–21) | [Assembly language in-class exercise](exercise/assembly.h
 &nbsp;             | Arrays and structs: [slides](lectures/lecture10-public.pdf), [arraystruct.zip (example code)](lectures/arraystruct.zip) | 3.8–3.9
 &nbsp;             | Code and data interactions, buffer overflows: [slides](lectures/lecture11-public.pdf), [buf.zip (example code)](lectures/buf.zip)  | 3.10
 Week 5 (Feb 24–28) | Program optimization (basic techniques) | 5.1–5.8 |
-                   | Pipelines | Patterson&amp;Hennessy 4.5–4.7
+&nbsp;             | Pipelines [slides](lectures/lecture13-public.pdf) | Patterson&amp;Hennessy 4.5–4.7
                    | Program optimization (ILP, memory, profiling) | 5.9–5.14
 Week 6 (Mar 2–6)   | Memory hierarchy | 6.1–6.3 |
                    | Caches | 6.4
