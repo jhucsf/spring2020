@@ -1,13 +1,15 @@
 ---
 layout: default
-title: "Assignment 3: Cache simulator, code optimization"
+title: "Assignment 3: Cache simulator"
 ---
 
 *Note that this assignment description is preliminary, and is likely to change*
 
-# Part 1: Cache simulator
+Due: Thursday, March 26th by 11pm
 
-**Acknowledgment**: This problem was originally developed by
+# Cache simulator
+
+**Acknowledgment**: This assignment was originally developed by
 [Peter Froehlich](https://www.cs.jhu.edu/~phf) for [his version of
 CSF](https://www.cs.jhu.edu/~phf/2018/fall/cs229).
 
@@ -18,7 +20,27 @@ implement a program to **simulate** how a variety of caches perform on
 these traces. You’ll then use your programs and the given traces to
 determine the **best overall cache configuration**.
 
-### Programming Languages
+## Grading criteria
+
+Your grade will be determined as follows:
+
+* Accurate load count: 9%
+* Accurate store count: 9%
+* Accurate load hits: 14%
+* Accurate load misses: 14%
+* Accurate store hits: 14%
+* Accurate store misses: 14%
+* Accurate total cycles: 6%
+* Report on best cache: 10%
+* Design, coding style: 10%
+
+For the numeric results, the `Total cycles` output only needs to be within &plusmn;10%, while the other results must be exact.
+
+Make sure you follow the [style guidelines](style.html).
+
+Your program should execute without memory errors or memory leaks.  Memory errors such as invalid reads or write, or uses of uninitialized memory, will result in a deduction of up to 10 points.  Memory leaks will result in a deduction of up to 5 points.
+
+## Programming Languages
 
 You can use either C or C++ for this assignment. You’re allowed to use
 the **standard** library of your chosen language as much as you would
@@ -27,18 +49,23 @@ like to, but you are **not** allowed to use any additional
 
 One advantage of choosing C++ is that you can use the built-in
 container data structures such as `map`, `vector`, etc.
-Regardless of which language you use, we highly encourage you to
+(Note however that it is entirely possible to create a straightforward
+and robust implementation of this program using dynamically-allocated
+arrays.) Regardless of which language you use, we highly encourage you to
 write modular, well-designed code, and to develop data types and
-functions to manage the complexity of the program.
+functions to manage the complexity of the program.  Strive for simplicity.
 
-Your must provide a `Makefile` such that
+You must provide a `Makefile` such that
 
 * `make clean` removes all object files and executables, and
 * `make` or `make csim` compiles and links your program, producing an executable called `csim`
 
 Your code should compile cleanly with gcc 7.x using the `-Wall -Wextra --pedantic` compiler flags.
+**Important**: your `Makefile` **must** use these options.  If your `Makefile`
+does *not* compile your code with these options, you will forfeit all of
+the points for design and coding style.
 
-### Problem 2(a): Cache Simulator (50%)
+## Part (a): Cache Simulator
 
 You will design and implement a **cache simulator** that can be used to
 study and compare the effectiveness of various cache configurations.
@@ -156,7 +183,7 @@ After the simulation is complete, your cache simulator is expected to
 print the following summary information in **exactly** the format given
 below:
 
-<pre>
+<div class="highlighter-rouge"><pre>
 Total loads: <i>count</i>
 Total stores: <i>count</i>
 Load hits: <i>count</i>
@@ -164,7 +191,7 @@ Load misses: <i>count</i>
 Store hits: <i>count</i>
 Store misses: <i>count</i>
 Total cycles: <i>count</i>
-</pre>
+</pre></div>
 
 The <tt><i>count</i></tt> value is simply an occurrence count.  As a concrete example,
 here is an example invocation of the program on one of the example traces, `gcc.trace`:
@@ -197,13 +224,13 @@ so that you can compare your results with other students' results.
 
 Here are some traces you can use for testing and empirical evaluation:
 
-* [hw4\_traces/gcc.trace](hw4_traces/gcc.trace)
-* [hw4\_traces/read01.trace](hw4_traces/read01.trace)
-* [hw4\_traces/read02.trace](hw4_traces/read02.trace)
-* [hw4\_traces/read03.trace](hw4_traces/read03.trace)
-* [hw4\_traces/swim.trace](hw4_traces/swim.trace)
-* [hw4\_traces/write01.trace](hw4_traces/write01.trace)
-* [hw4\_traces/write02.trace](hw4_traces/write02.trace)
+* [assign03\_traces/gcc.trace](assign03_traces/gcc.trace)
+* [assign03\_traces/read01.trace](assign03_traces/read01.trace)
+* [assign03\_traces/read02.trace](assign03_traces/read02.trace)
+* [assign03\_traces/read03.trace](assign03_traces/read03.trace)
+* [assign03\_traces/swim.trace](assign03_traces/swim.trace)
+* [assign03\_traces/write01.trace](assign03_traces/write01.trace)
+* [assign03\_traces/write02.trace](assign03_traces/write02.trace)
 
 `gcc.trace` and `swim.trace` are traces from real programs, so you should
 consider using them in your empirical evaluation.
@@ -222,17 +249,17 @@ make the other design parameters work. Also, sanity-check your simulator
 frequently with simple, hand-crafted traces for which you can still
 derive manually what the behavior should be.
 
-*More hints coming soon...* (Sorry, no more hints will be forthcoming
-on this assignment description page, but please do check out
-[Piazza](http://piazza.com/jhu/fall2019/601229)).
+Note that accurate cycle counting is only worth 6% of the total assignment
+grade.  Make sure that loads and stores are modeled correctly with accurate
+hit and miss counts before being too concerned about counting cycles.
 
-### Problem 2(b): Best Cache? (6%)
+### Part (b): Best cache
 
-For the second problem, you’ll use the memory traces as well as your
+For part (b), you’ll use the memory traces as well as your
 simulator to determine which cache configuration has the **best overall
 effectiveness**. You should take a variety of properties into account:
 hit rates, miss penalties, total cache size (including overhead), etc.
-In your `README` describe in detail what experiments you ran (and
+In your `README`, describe in detail what experiments you ran (and
 why\!), what results you got (and how\!), and what, in your opinion, is
 the best cache configuration of them all.
 
@@ -242,10 +269,25 @@ The memory traces above come from a similar programming assignment by
 Steven Swanson at the University of California, San Diego. Thank you
 Steven\!
 
-# Part 2: Code optimization
+## Submitting
 
-TODO
+Create a zipfile that has your `Makefile`, source and header files, and
+`README` file. All of the files should be in the top level directory of
+the zipfile. As an example, if your zipfile is called `assign3.zip`, the
+command `unzip -l assign3.zip` might produce the following output:
 
-# Deliverables, submitting
+```
+Archive:  assign3.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+    15225  2020-02-25 12:27   main.c
+      149  2020-02-25 12:27   Makefile
+    12075  2020-02-25 12:28   README
+---------                     -------
+    27449                     3 files
+```
 
-TODO
+Your exact output will almost certainly differ, for example, depending on
+how you structured your cache simulator program.
+
+Upload your zipfile to [Gradescope](https://www.gradescope.com) as **Assignment3**.

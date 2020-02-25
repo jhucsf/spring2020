@@ -22,4 +22,7 @@ Assignment | Due
 ---------- | ---
 [Assignment 1: Arbitrary-precision arithmetic](assign/assign01.html) | <strike>Friday, Feb 7</strike> Tuesday, Feb 11 by 11pm
 [Assignment 2: Postfix calculator](assign/assign02.html) | <strike>Wednesday, February 26</strike> Tuesday, Mar 3rd by 11pm
-[Assignment 3: Cache simulator, code optimization](assign/assign03.html) | TBD
+[Assignment 3: Cache simulator](assign/assign03.html) | Thursday, Mar 26th by 11pm
+[Assignment 4](assign/assign04.html) | 
+[Assignment 5](assign/assign05.html) | 
+[Assignment 6](assign/assign06.html) | 
