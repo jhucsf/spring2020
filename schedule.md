@@ -29,26 +29,26 @@ Week 5 (Feb 24–28) | Program optimization (basic techniques) | 5.1–5.8 |
                    | Program optimization (ILP, memory, profiling) | 5.9–5.14
 Week 6 (Mar 2–6)   | Memory hierarchy | 6.1–6.3 |
                    | Caches | 6.4
-                   | Caches and program execution | 6.5 |
+                   | Midterm exam review |
 Week 7 (Mar 9–13)  | **Midterm exam** (March 9th)
+                   | Caches and program execution | 6.5 |
                    | Linking basics | 7.1–7.5 |
-                   | Symbols, relocations, executables, loading | 7.6–7.9
 Week 8 (Mar 16–20) | Spring break, no class
-Week 9 (Mar 23–27) | Dynamic linking, shared libraries, PIC | 7.10–7.12 |
+Week 9 (Mar 23–27) | Symbols, relocations, executables, loading | 7.6–7.9
+                   | Dynamic linking, shared libraries, PIC | 7.10–7.12 |
                    | Exceptions, Processes | 8.1–8.3, 8.7
-                   | Process control | 8.4
-Week 10 (Mar 30–Apr 3) | Signals | 8.5–8.6 |
+Week 10 (Mar 30–Apr 3) | Process control | 8.4
+                   | Signals | 8.5–8.6 |
                    | Virtual memory | 9.1–9.7
-                   | Memory mapping | 9.8
-Week 11 (Apr 6–10) | Dynamic memory allocation | 9.9, 9.11 |
+Week 11 (Apr 6–10) | Memory mapping | 9.8
+                   | Dynamic memory allocation | 9.9, 9.11 |
                    | I/O, files, read/write | 10.1–10.5 |
-                   | File metadata, directories, sharing | 10.6–10.11
-Week 12 (Apr 13–17)| Networks, Internet Protocol | 11.1–11.3 |
+Week 12 (Apr 13–17)| File metadata, directories, sharing | 10.6–10.11
+                   | Networks, Internet Protocol | 11.1–11.3 |
                    | Sockets | 11.4
-                   | Network applications, HTTP | 11.5–11.6 |
-Week 13 (Apr 20–24)| Concurrency with processes | 12.1 |
+Week 13 (Apr 20–24)| Network applications, HTTP | 11.5–11.6 |
+                   | Concurrency with processes | 12.1 |
                    | Concurrency with I/O multiplexing | 12.2 |
-                   | Concurrency with threads, synchronization | 12.3–12.5
-Week 14 (Apr 27–May 1) | Parallelism, concurrency issues | 12.6–12.7 |
-                   | — | |
-                   | —                
+Week 14 (Apr 27–May 1) | Concurrency with threads, synchronization | 12.3–12.5
+                   | Parallelism, concurrency issues | 12.6–12.7 |
+                   | Final exam review |
