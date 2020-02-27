@@ -3,7 +3,15 @@ layout: default
 title: "Midterm exam review questions"
 ---
 
-# Binary data representation
+# Midterm review questions
+
+This document has review questions for the midterm exam.  We will be adding additional review questions (so keep an eye on this page.)
+
+We will have a review session in class on Friday, March 6th for Section 01, and Wednesday, March 4th for Section 02.  During the review session we will present solutions to these review questions.  We'll also post solutions here on the course website.
+
+These questions cover topics that will be emphasized on the midterm exam, but may be more challenging than the actual midterm questions.
+
+## Binary data representation
 
 Assume that `uint8_t` is an unsigned, 8 bit integer data type.
 
