@@ -48,7 +48,7 @@ int8_t negate(int8_t x) {
 }
 ```
 
-Complete the following C function so that it behaves identically to the `negate` function, in the sense that when it is given an 8 bit binary value, it will return an 8 bit value with the same bit pattern as what would be returned from the `negate` function shown above.  You may not use type casts, but you may use bitwise operations and arithmetic for `uint8_t` values.  Hint: `~` is the bitwise complement operator.
+Complete the following C function so that it behaves identically to the `negate` function, in the sense that when it is given an 8 bit binary value, it will return an 8 bit value with the same bit pattern as what would be returned from the `negate` function shown above.  You may not use type casts, but you may use bitwise operations and arithmetic for `uint8_t` values.  Hint: `~` is the bitwise complement operator (which will invert the bits of the value to which it is applied).
 
 ```c
 uint8_t negate_u(uint8_t x) {
