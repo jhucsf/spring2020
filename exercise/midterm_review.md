@@ -160,7 +160,7 @@ printSum:
 	movq %rdi, %r12               /* copy first parameter to %r12 */
 	addq %rsi, %r12               /* add in value of second parameter */
 	movq $sResultMsg, %rdi        /* pass format string to printf */
-	movq %r12, %rsi               /* pass sum as second parametr */
+	movq %r12, %rsi               /* pass sum as second parameter */
 	call printf                   /* print the sum */
 	ret                           /* return from the function */
 ```
