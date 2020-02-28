@@ -11,7 +11,7 @@ We will have a review session in class on Friday, March 6th for Section 01, and 
 
 These questions cover topics that will be emphasized on the midterm exam, but may be more challenging than the actual midterm questions.
 
-## Binary data representation
+## Binary data representation, integer arithmetic
 
 Assume that:
 
@@ -145,4 +145,22 @@ Fill in your code here:
 	.globl makePositive
 makePositive:
 	/* your code here... */
+```
+
+**(c)** The following code is intended to compute the sum of its two parameters and then print the sum.  Briefly explain the errors that exist in this code, and how to fix them.  (Note that there could be multiple errors!)
+
+```
+	.section .rodata
+sResultMsg: .string "Sum is %ld\n"
+
+	.section .text
+
+	.globl printSum
+printSum:
+	movq %rdi, %r12               /* copy first parameter to %r12 */
+	addq %rsi, %r12               /* add in value of second parameter */
+	movq $sResultMsg, %rdi        /* pass format string to printf */
+	movq %r12, %rsi               /* pass sum as second parametr */
+	call printf                   /* print the sum */
+	ret                           /* return from the function */
 ```
