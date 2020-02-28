@@ -100,9 +100,9 @@ long strLen(const char *s);
 Here are example assertions specifying its behavior:
 
 ```c
-ASSERT(0 == strLen(""));
-ASSERT(5 == strLen("hello"));
-ASSERT(12 == strLen("hello, world"));
+ASSERT(0L == strLen(""));
+ASSERT(5L == strLen("hello"));
+ASSERT(12L == strLen("hello, world"));
 ```
 
 Fill in your code here:
@@ -130,11 +130,11 @@ long myArr[] = { 4, -9, 9, 7, -1 };
 
 makePositive(myArr, 5);
 
-ASSERT(4 == myArr[0]);
-ASSERT(9 == myArr[1]);
-ASSERT(9 == myArr[2]);
-ASSERT(7 == myArr[3]);
-ASSERT(1 == myArr[4]);
+ASSERT(4L == myArr[0]);
+ASSERT(9L == myArr[1]);
+ASSERT(9L == myArr[2]);
+ASSERT(7L == myArr[3]);
+ASSERT(1L == myArr[4]);
 ```
 
 Fill in your code here:
