@@ -114,3 +114,35 @@ Fill in your code here:
 strLen:
 	/* your code here... */
 ```
+
+**(b)** Complete the following x86-64 assembly language function called `makePositive`, which takes two parameters: `a`, which is a pointer to the first element of an array of 64 bit signed integers, and `n`, which indicates how many elements the array has.  The function should modify all of the negative elements of the array so that they become positive. (You can ignore the situation where an array element might have the value -2<sup>63</sup>, which can't be negated.)
+
+In C, this function would have the following declaration:
+
+```c
+void makePositive(long *a, long n);
+```
+
+Here are example assertions specifying its behavior:
+
+```c
+long myArr[] = { 4, -9, 9, 7, -1 };
+
+makePositive(myArr, 5);
+
+ASSERT(4 == myArr[0]);
+ASSERT(9 == myArr[1]);
+ASSERT(9 == myArr[2]);
+ASSERT(7 == myArr[3]);
+ASSERT(1 == myArr[4]);
+```
+
+Fill in your code here:
+
+```
+	.section .text
+
+	.globl makePositive
+makePositive:
+	/* your code here... */
+```
