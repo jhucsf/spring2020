@@ -27,7 +27,7 @@ Week 4 (Feb 17–21) | [Assembly language in-class exercise](exercise/assembly.h
 Week 5 (Feb 24–28) | Program optimization (basic techniques) | 5.1–5.8 |
 &nbsp;             | Pipelines [slides](lectures/lecture13-public.pdf) | Patterson&amp;Hennessy 4.5–4.7
                    | Program optimization (ILP, memory, profiling) | 5.9–5.14
-Week 6 (Mar 2–6)   | Memory hierarchy | 6.1–6.3 |
+Week 6 (Mar 2–6)   | Memory hierarchy [slides](lectures/lecture15-public.pdf) | 6.1–6.3 |
                    | Caches | 6.4
                    | Midterm exam review |
 Week 7 (Mar 9–13)  | **Midterm exam** (March 9th)
