@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Mar 2** — Additional [midterm review questions](exercise/midterm_review.html) were added.
 * **Feb 28** — The midterm exam will take place in class on **Monday, March 9th**. It will be a written exam, closed book and closed notes, 50 minutes duration. [Midterm review questions](exercise/midterm_review.html) are available. Note that we will be adding additional review questions soon.
 * **Feb 21** — The due date for [Assignment 2](assign/assign02.html) has been moved to 11pm on **Tuesday, Mar 3rd**.
 * **Feb 19** — A [solution](exercise/asmExerciseSoln.zip) to the in-class [assembly language exercise](exercise/assembly.html) has been posted.

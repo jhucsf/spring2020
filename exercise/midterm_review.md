@@ -3,6 +3,8 @@ layout: default
 title: "Midterm exam review questions"
 ---
 
+*Update 3/2* — Added [performance optimization](#performance-optimization) and [memory hierarchy](#memory-hierarchy) questions.
+
 # Midterm review questions
 
 This document has review questions for the midterm exam.  We will be adding additional review questions (so keep an eye on this page.)
@@ -87,7 +89,7 @@ Register | 8 bit sub-register
 `%rax`   | `%al` (same pattern for `%rbx`, `%rcx`, `%rdx`)
 `%rdi`   | `%dil`
 `%rsi`   | `%sil`
-`%r10`   | `%r10b` (same pattern for `%r11`–`%r15`)
+`%r8`    | `%r8b` (same pattern for `%r9`–`%r15`)
 
 Note that assigning to the 8 bit sub-register does *not* clear the other bits of the larger register.
 
@@ -164,3 +166,22 @@ printSum:
 	call printf                   /* print the sum */
 	ret                           /* return from the function */
 ```
+
+## Performance optimization
+
+Assume that a superscalar x86-64 CPU has three integer multipliers with a latency of 3 cycles, and that the multipliers are fully pipelined.
+
+**(a)** When the code below is executed, how many cycles are required for the result in the `%r12` to be computed? Explain briefly.
+
+```
+imulq %rdi, %rsi
+imulq %rsi, %r10
+imulq %r10, %r11
+imulq %r11, %r12
+```
+
+**(b)** Show a series of operations that computes the final product in `%r12` more quickly. You may use additional registers if needed.  Justify your answer briefly, indicating how many cycles are required.
+
+## Memory hierarchy
+
+See Question 2 from the [Fall 2016 final exam](https://www.cs.jhu.edu/~phi/csf/final2016.pdf).
