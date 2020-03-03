@@ -3,8 +3,6 @@ layout: default
 title: "Assignment 3: Cache simulator"
 ---
 
-*Note that this assignment description is preliminary, and is likely to change*
-
 Due: Thursday, March 26th by 11pm
 
 # Cache simulator
