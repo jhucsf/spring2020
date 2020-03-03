@@ -13,6 +13,8 @@ We will have a review session in class on Friday, March 6th for Section 01, and 
 
 These questions cover topics that will be emphasized on the midterm exam, but may be more challenging than the actual midterm questions.
 
+Solutions are here: [Solutions](midterm_review_soln.html), [Solution code](midterm_review_soln_code.zip).  **Don't look at the solutions until you attempt the questions on your own!**
+
 ## Binary data representation, integer arithmetic
 
 Assume that:

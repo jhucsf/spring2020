@@ -86,6 +86,14 @@ uint8_t negate_u(uint8_t x) {
 int overflow32(uint32_t a, uint32_t b) {
 ```
 
+*Answer:*
+
+```c
+int overflow32(uint32_t a, uint32_t b) {
+  return (a + b) < a;
+}
+```
+
 ## x86-64
 
 Things to know about x86-64 code:
@@ -269,8 +277,58 @@ imulq %r10, %r11
 imulq %r11, %r12
 ```
 
+*Answer:*
+
+Let's label each instruction A–D:
+
+```
+imulq %rdi, %rsi    /* A */
+imulq %rsi, %r10    /* B */
+imulq %r10, %r11    /* C */
+imulq %r11, %r12    /* D */
+```
+
+There are data dependences in this sequence which require the instructions to be executed sequentially.  For example, instruction B requires the result of instruction A as a source operand.  So, the pipeline is not used efficiently:
+
+```
+Time:      0  1  2  3  4  5  6  7  8  9  10 11 12
+         +----------------------------------------
+Stage 1  | A        B        C        D
+Stage 2  |    A        B        C        D
+Stage 3  |       A        B        C        D
+```
+
+A total of 12 cycles is required.
+
 **(b)** Show a series of operations that computes the final product in `%r12` more quickly. You may use additional registers if needed.  Justify your answer briefly, indicating how many cycles are required.
+
+*Answer:*
+
+We can exploit the fact that integer multiplication is commutative to utilize the pipeline somewhat more fully.  For example:
+
+```
+imulq %rdi, %rsi    /* A */
+imulq %r10, %r11    /* B */
+imulq %rsi, %r12    /* C */
+imulq %r10, %r12    /* D */
+```
+
+Timing analysis:
+
+```
+Time:      0  1  2  3  4  5  6  7  8  9  10 11 12
+         +----------------------------------------
+Stage 1  | A  B     C        D
+Stage 2  |    A  B     C        D
+Stage 3  |       A  B     C        D
+```
+
+The revised sequence executes in 9 cycles.
 
 ## Memory hierarchy
 
 See Question 2 from the [Fall 2016 final exam](https://www.cs.jhu.edu/~phi/csf/final2016.pdf).
+
+*Answer:*
+
+See the [Fall 2016 final exam solutions](https://www.cs.jhu.edu/~phi/csf/final2016-solutions.pdf).

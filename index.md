@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Mar 3** — Solutions to the [midterm review questions](exercise/midterm_review.html) have been posted, but we recommend that you don't look at them until you've tried answering them on your own.
 * **Mar 2** — Additional [midterm review questions](exercise/midterm_review.html) were added.
 * **Feb 28** — The midterm exam will take place in class on **Monday, March 9th**. It will be a written exam, closed book and closed notes, 50 minutes duration. [Midterm review questions](exercise/midterm_review.html) are available. Note that we will be adding additional review questions soon.
 * **Feb 21** — The due date for [Assignment 2](assign/assign02.html) has been moved to 11pm on **Tuesday, Mar 3rd**.
