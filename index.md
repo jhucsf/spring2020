@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Mar 8** — A correction has been posted for the answer to performance optimization part (b) on the [midterm review solutions](exercise/midterm_review_soln.html).
 * **Mar 3** — [Assignment 3](assign/assign03.html) has been (officially) released, due **Thursday, March 26th** by 11pm.
 * **Mar 3** — Solutions to the [midterm review questions](exercise/midterm_review.html) have been posted, but we recommend that you don't look at them until you've tried answering them on your own.
 * **Mar 2** — Additional [midterm review questions](exercise/midterm_review.html) were added.

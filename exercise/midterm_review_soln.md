@@ -3,6 +3,8 @@ layout: default
 title: "Midterm exam review questions — solutions"
 ---
 
+*Update 3/8*: a correction has been made to the answer for [performance optimization](#performance-optimization) part (b)
+
 ## Binary data representation, integer arithmetic
 
 Assume that:
@@ -306,12 +308,13 @@ A total of 12 cycles is required.
 
 We can exploit the fact that integer multiplication is commutative to utilize the pipeline somewhat more fully.  For example:
 
-```
+<div class="highlighter-rouge"><pre>
 imulq %rdi, %rsi    /* A */
 imulq %r10, %r11    /* B */
 imulq %rsi, %r12    /* C */
-imulq %r10, %r12    /* D */
-```
+<strike>imulq %r10, %r12    /* D */</strike>
+imulq %r11, %r12    /* D */
+</pre></div>
 
 Timing analysis:
 
