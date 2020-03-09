@@ -5,6 +5,8 @@ title: "Midterm exam review questions — solutions"
 
 *Update 3/8*: a correction has been made to the answer for [performance optimization](#performance-optimization) part (b)
 
+*Update 3/9*: corrected explanations of the answers to [performance optimization](#performance-optimization) parts (a) and (b)
+
 ## Binary data representation, integer arithmetic
 
 Assume that:
@@ -268,7 +270,7 @@ printSum:
 
 ## Performance optimization
 
-Assume that a superscalar x86-64 CPU has three integer multipliers with a latency of 3 cycles, and that the multipliers are fully pipelined.
+Assume that a superscalar x86-64 CPU has three integer multipliers with a latency of 3 cycles.  You may assume that the integer multipliers are fully pipelined.
 
 **(a)** When the code below is executed, how many cycles are required for the result in the `%r12` to be computed? Explain briefly.
 
@@ -290,7 +292,7 @@ imulq %r10, %r11    /* C */
 imulq %r11, %r12    /* D */
 ```
 
-There are data dependences in this sequence which require the instructions to be executed sequentially.  For example, instruction B requires the result of instruction A as a source operand.  So, the pipeline is not used efficiently:
+There are data dependences in this sequence which require the instructions to be executed sequentially.  For example, instruction B requires the result of instruction A as a source operand.  So, even though there are three integer multipliers which could be used independently, no parallelism is possible.  (We're assuming that data dependences cannot be satisfied early via forwarding.)
 
 ```
 Time:      0  1  2  3  4  5  6  7  8  9  10 11 12
@@ -306,13 +308,12 @@ A total of 12 cycles is required.
 
 *Answer:*
 
-We can exploit the fact that integer multiplication is commutative to utilize the pipeline somewhat more fully.  For example:
+We can exploit the fact that integer multiplication is commutative to utilize the available functional units somewhat more fully.  For example:
 
 <div class="highlighter-rouge"><pre>
 imulq %rdi, %rsi    /* A */
 imulq %r10, %r11    /* B */
 imulq %rsi, %r12    /* C */
-<strike>imulq %r10, %r12    /* D */</strike>
 imulq %r11, %r12    /* D */
 </pre></div>
 
@@ -321,12 +322,12 @@ Timing analysis:
 ```
 Time:      0  1  2  3  4  5  6  7  8  9  10 11 12
          +----------------------------------------
-Stage 1  | A  B     C        D
-Stage 2  |    A  B     C        D
-Stage 3  |       A  B     C        D
+Stage 1  | AB       C        D
+Stage 2  |    AB       C        D
+Stage 3  |       AB       C        D
 ```
 
-The revised sequence executes in 9 cycles.
+The revised sequence executes in 9 cycles.  Note that instructions A and B can execute in parallel (utilizing two multipliers in parallel), but because of the data dependence of instruction C on instruction A, C can't start executing until A finishes.
 
 ## Memory hierarchy
 
