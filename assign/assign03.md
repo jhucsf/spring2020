@@ -3,7 +3,9 @@ layout: default
 title: "Assignment 3: Cache simulator"
 ---
 
-Due: Thursday, March 26th by 11pm
+Due: <strike>Thursday, March 26th</strike> Monday, March 30th by 11pm
+
+*Update 3/16*: minor change to grading rubric to allocate points for gracefully handling invalid parameters
 
 # Cache simulator
 
@@ -22,8 +24,9 @@ determine the **best overall cache configuration**.
 
 Your grade will be determined as follows:
 
-* Accurate load count: 9%
-* Accurate store count: 9%
+* Gracefully handling invalid parameters: 2%
+* Accurate load count: 8%
+* Accurate store count: 8%
 * Accurate load hits: 14%
 * Accurate load misses: 14%
 * Accurate store hits: 14%
