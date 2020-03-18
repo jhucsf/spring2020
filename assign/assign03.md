@@ -7,6 +7,8 @@ Due: <strike>Thursday, March 26th</strike> Monday, March 30th by 11pm
 
 *Update 3/16*: minor change to grading rubric to allocate points for gracefully handling invalid parameters
 
+*Update 3/18*: clarified that loads and stores in the trace will access at most 4 bytes
+
 # Cache simulator
 
 **Acknowledgment**: This assignment was originally developed by
@@ -106,6 +108,10 @@ first field is either `l` or `s` depending on whether the processor is
 memory address given in hexadecimal; the `0x` at the beginning means
 “the following is hexadecimal” and is not itself part of the address.
 You can **ignore** the third field for this assignment.
+
+Note that you should assume that each load or store in the trace accesses
+at most 4 bytes of data, and that no load or store accesses data which spans
+multiple cache blocks (a.k.a. "lines".)
 
 Your cache simulator will be configured with the following cache design
 parameters which are given as command-line arguments (see below):
