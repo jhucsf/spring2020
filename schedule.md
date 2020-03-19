@@ -31,11 +31,11 @@ Week 6 (Mar 2–6)   | Memory hierarchy [slides](lectures/lecture15-public.pdf) 
 &nbsp;             | Caches [slides](lectures/lecture16-public.pdf) | 6.4
                    | Midterm exam review |
 Week 7 (Mar 9–13)  | **Midterm exam** (March 9th)
-                   | Caches and program execution (see Piazza for slides) | 6.5 |
+                   | *two classes canceled*
 Week 8 (Mar 16–20) | Spring break, no class
-Week 9 (Mar 23–27) | Linking basics [slides](lectures/lecture18-public.pdf) | 7.1–7.5 |
-                   | Symbols, relocations, executables, loading | 7.6–7.9
-                   | Dynamic linking, shared libraries, PIC | 7.10–7.12 |
+Week 9 (Mar 23–27) | Caches and program execution (see Piazza for slides) | 6.5 |
+&nbsp;             | Linking basics, symbols, relocations, executables, loading [slides](lectures/lecture18-public.pdf) | 7.1–7.9 |
+&nbsp;             | Dynamic linking, shared libraries, PIC, interpositioning | 7.10–7.15 |
 Week 10 (Mar 30–Apr 3) | Exceptions, Processes | 8.1–8.3, 8.7
                    | Process control | 8.4
                    | Signals | 8.5–8.6 |

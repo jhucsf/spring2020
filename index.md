@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Mar 19** — The [Schedule](schedule.html) has been updated to account for the canceled classes prior to spring break.
 * **Mar 16** — There is a minor change to the grading rubric for [Assignment 3](assign/assign03.html). Also, the due date has been moved to 11pm on **Monday, March 30th**.
 * **Mar 13** — Please refer to [Piazza](https://piazza.com/jhu/spring2020/601229) for information about the class moving online. Also, please note that the slides for Lecture 17 (which would have been presented in class on March 11th) are available in the Piazza Resources section, and have some information about handling cache writes that will be useful for [Assignment 3](assign/assign03.html).
 * **Mar 9** — Additional corrections have been posted for the answers to performance optimization parts (a) and (b) on the [midterm review solutions](exercise/midterm_review_soln.html).
