@@ -33,6 +33,7 @@ Week 6 (Mar 2–6)   | Memory hierarchy [slides](lectures/lecture15-public.pdf) 
 Week 7 (Mar 9–13)  | **Midterm exam** (March 9th)
                    | *two classes canceled*
 Week 8 (Mar 16–20) | Spring break, no class
+&nbsp;             | Optional dry run of online class meeting [slides](lectures/dryrun.pdf)
 Week 9 (Mar 23–27) | Caches and program execution (see Piazza for slides) | 6.5 |
 &nbsp;             | Linking basics, symbols, relocations, executables, loading [slides](lectures/lecture18-public.pdf) | 7.1–7.9 |
 &nbsp;             | Dynamic linking, shared libraries, PIC, interpositioning | 7.10–7.15 |
