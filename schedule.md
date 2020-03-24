@@ -36,7 +36,7 @@ Week 8 (Mar 16–20) | Spring break, no class
 &nbsp;             | Optional dry run of online class meeting [slides](lectures/dryrun.pdf)
 Week 9 (Mar 23–27) | Caches and program execution (see Piazza for slides) | 6.5 |
 &nbsp;             | Linking basics, symbols, relocations, executables, loading [slides](lectures/lecture18-public.pdf) | 7.1–7.9 |
-&nbsp;             | Dynamic linking, shared libraries, PIC, interpositioning | 7.10–7.15 |
+&nbsp;             | Dynamic linking, shared libraries, PIC, interpositioning [slides](lectures/lecture19-public.pdf), [dynload.zip (example code)](lectures/dynload.zip) | 7.10–7.15 |
 Week 10 (Mar 30–Apr 3) | Exceptions, Processes | 8.1–8.3, 8.7
                    | Process control | 8.4
                    | Signals | 8.5–8.6 |
