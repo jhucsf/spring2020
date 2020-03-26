@@ -1,13 +1,11 @@
 ---
 layout: default
-title: "Assignment 4: Image processing plugins"
+title: "Assignment 4: Image processing with plugins"
 ---
-
-*Preliminary/incomplete assignment description: this will be updated*
 
 Due: Wednesday, April 8th by 11pm
 
-# Image processing plugins
+# Image processing with plugins
 
 In this assignment you will use *dynamic loading* to implement an image-processing application supporting *plugins* to allow the program to support arbitrary image transformation algorithms.
 
@@ -18,7 +16,8 @@ Your grade will be determined as follows:
 * Driver program (`imgproc`): 40%
 * `mirrorh` plugin: 10%
 * `mirrorv` plugin: 10%
-* `tile` plugin: 20%
+* `tile` plugin: 10%
+* `expose` plugin: 10%
 * Packaging: 10%
 * Design and coding style: 10%
 
@@ -90,32 +89,41 @@ If `imgproc` is invoked with the `list` command, it should print the names and d
 
 ```
 $ ./imgproc list
-Loaded 4 plugin(s)
+Loaded 5 plugin(s)
  mirrorh: mirror image horizontally
  mirrorv: mirror image vertically
   swapbg: swap blue and green color component values
     tile: tile source image in an NxN arrangement
+  expose: adjust the intensity of all pixels
 ```
 
-The `list` command should produce one line of output per loaded plugin, as shown above.  You should use the exact description text shown above for your implementations of the `mirrorh`, `mirrorv`, and `tile` plugins.  The ordering of the output lines is not important.
+The `list` command should produce one line of output per loaded plugin, as shown above.  You should use the exact description text shown above for your implementations of the `mirrorh`, `mirrorv`, `tile`, and `expose` plugins.  The ordering of the output lines is not important.
 
 If `imgproc` is invoked with the `exec` command, it should use the named image plugin to transform a specified source image into a named destination image.  For example, here is a possible invocation to execute the `swapbg` plugin on `data/kitten.png` to produce the output file `kitten_swapbg.png`:
 
 ```
-$ ./imgproc exec swapbg data/kitten.png kitten_swapbg.png
+./imgproc exec swapbg data/kitten.png kitten_swapbg.png
 ```
 
 The `tile` plugin requires a single command line argument (following the name of the output file), which is an integer specifying the tiling factor.  Example invocation:
 
 ```
-$ ./imgproc exec tile data/kitten.png kitten_tile_3.png 3
+./imgproc exec tile data/kitten.png kitten_tile_3.png 3
+```
+
+The `expose` plugin requires a single command line argument (following the name of the output file), which is a floating point value specifying the expose factor. Example invocation:
+
+```
+./imgproc exec expose data/kitten.png kitten_exp_0.5.png 0.5
 ```
 
 ### Hints and specifications for the driver program
 
+**Very important**: Your driver program must *not* implement any of the image transformations. All of the image transformations must be implemented within the plugin shared libraries.
+
 The main challenges for implementing the driver program are discovering which plugins are available, loading them, and getting pointers to the plugin API functions for each plugin.
 
-To discover which plugins are available, the driver program should first determine which directory contains the plugin shared libraries.  If an environment variable called `PLUGIN_DIR` is set, the driver program should assume it contains the pathname of the plugin directory.  Otherwise, it should assume that the plugin shared libraries are in the `./plugins` directory (i.e., the `plugins` subdirectory of the directory the driver program is running it.)
+To discover which plugins are available, the driver program should first determine which directory contains the plugin shared libraries.  If an environment variable called `PLUGIN_DIR` is set, the driver program should assume it contains the pathname of the plugin directory.  (Use the [getenv](https://linux.die.net/man/3/getenv) function to check whether this environment variable is set.)  Otherwise, it should assume that the plugin shared libraries are in the `./plugins` directory (i.e., the `plugins` subdirectory of the directory the driver program is running it.)
 
 Once the driver program has determined the plugin directory, it should use the [opendir](https://linux.die.net/man/3/opendir), [readdir](https://linux.die.net/man/3/readdir), and [closedir](https://linux.die.net/man/3/closedir) functions to find all of the files in the plugin directory which end in the `.so` file extension.  Each such file should be assumed to be an image plugin shared library.
 
@@ -131,7 +139,11 @@ struct Plugin {
 };
 ```
 
-Once the driver program has discovered and loaded the plugins, it should determine which command was specified, and carry out the command.  The `list` command should iterate through the plugins and use the `get_plugin_name` and `get_plugin_desc` commands to get the name and short description of each available plugin.  The `exec` command should load the specified input image (using `img_read_png`), pass any command line arguments (past the input and output filenames) to the plugin's `parse_arguments` function to produce an argument object, call the plugin's `transform_image` function to perform the image transformation (passing the argument object returned by `parse_arguments`), and then save the resulting image to the named output file (using `img_write_png`).
+Once the driver program has discovered and loaded the plugins, it should determine which command was specified, and carry out the command.
+
+The `list` command should iterate through the plugins and use the `get_plugin_name` and `get_plugin_desc` commands to get the name and short description of each available plugin.
+
+The `exec` command should find a plugin whose name matches the specified plugin name, load the specified input image (using `img_read_png`), pass any command line arguments (past the input and output filenames) to the plugin's `parse_arguments` function to produce an argument object, call the plugin's `transform_image` function to perform the image transformation (passing the argument object returned by `parse_arguments`), and then save the resulting image to the named output file (using `img_write_png`).
 
 **Important**: The driver program must contain the functions defined in `image.c` and `pnglite.c`.  Also:
 
@@ -154,13 +166,24 @@ gcc -g -Wall -Wextra -pedantic -std=gnu99 -fPIC -c pnglite.c -o pnglite.o
 gcc -export-dynamic -o imgproc imgproc.o image.o pnglite.o -lz -ldl
 ```
 
+### Error handling
+
+In any situation where the driver program cannot complete sucessfully, it should print an error message and exit with a non-zero exit code.  Examples of situations that are errors include:
+
+* Missing or invalid command line arguments
+* Unknown command name
+* An image processing plugin can't be loaded
+* A required API function can't be found within a loaded plugin
+* A memory allocation error occurred
+
 ## Image plugins
 
-An *image plugin* is Linux a shared library defining a set of API functions implementing an image transformation.  You are responsible for implementing three image plugins:
+An *image plugin* is a Linux shared library defining four specific API functions.  You are responsible for implementing four image plugins:
 
 * `mirrorh`
 * `mirrorv`
 * `tile`
+* `expose`
 
 The header file `image_plugin.h` defines the functions that each image plugin must implement:
 
@@ -225,6 +248,50 @@ Example result images (click for full-size):
 Note that when the image's width or height isn't evenly divisible by *N*, the excess should be spread out, starting with the leftmost tiles (for excess width) and topmost tiles (for excess height).  For example, in the 3 x 3 case for an 800x600 source image, the tile widths should be 267, 267, and 266, and the tile heights should be 200, 200, and 200.
 
 The tiles should sample every *N*th pixel from the source image horizontally and vertically.
+
+## `expose` plugin
+
+The `expose` plugin changes all red/green/blue color component values by a specified factor. It takes a single command line argument, which is the floating point value to use as the factor.  The factor must not be negative.  Note that if the factor is greater than 1, multiplying the factor by a color component value in the original image could result in a value greater than 255.  The transformation should limit all effective color component values to 255: this will cause "over-exposed" pixels to saturate towards white.
+
+Example result images (click for full-size):
+
+> Factor = 0.5 | Factor = 2.0
+> ------------ | ------------
+> <a href="img/kitten_exp_0.5.png"><img alt="kitten exposed 0.5" src="img/kitten_exp_0.5.png" style="width:400px;"></a> | <a href="img/kitten_exp_2.0.png"><img alt="kitten exposed 2.0" src="img/kitten_exp_2.0.png" style="width:400px;"></a>
+
+# Packaging and submitting
+
+Your implementation must have a `Makefile` such that executing `make` (i.e., building the default target) builds all of the following artifacts:
+
+* the `imgproc` executable
+* the `mirrorh`, `mirrorv`, `tile`, and `expose` plugin shared libraries, in the "plugins" directory
+
+The exact name of the plugin shared libraries isn't important, but it's not a bad idea to have the shared library names match the plugin names.  For example, your `tile` plugin could be build as a shared library called `plugins/tile.so`.
+
+Your `Makefile`'s `clean` target should delete all executables and shared libraries.
+
+Submit all of the source files and header files needed by your driver program and plugin implementations, along with your `Makefile`, in a single zipfile.  For example, your command to produce the zipfile might looks like the following:
+
+```
+$ zip -9r solution.zip Makefile *.c *.h
+  adding: Makefile (deflated 51%)
+  adding: demo.c (deflated 47%)
+  adding: expose.c (deflated 58%)
+  adding: image.c (deflated 69%)
+  adding: imgproc.c (deflated 69%)
+  adding: mirrorh.c (deflated 53%)
+  adding: mirrorv.c (deflated 55%)
+  adding: pnglite.c (deflated 76%)
+  adding: swapbg.c (deflated 51%)
+  adding: tile.c (deflated 63%)
+  adding: image.h (deflated 57%)
+  adding: image_plugin.h (deflated 56%)
+  adding: pnglite.h (deflated 63%)
+```
+
+A reference `Makefile` is provided: [Makefile](assign04/Makefile).  You may use or adapt this `Makefile` if you choose to.
+
+Submit your zipfile to [Gradescope](https://www.gradescope.com/) as **Assignment4**.
 
 <!--
 vim:wrap linebreak nolist:

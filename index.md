@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Mar 26** — [Assignment 4](assign/assign04.html) has been posted, and is due Wednesday, April 8th by 11pm.
 * **Mar 20** — The [slides](lectures/dryrun.pdf) for today's (optional and voluntary) online class meeting dry run are available.
 * **Mar 19** — The [Schedule](schedule.html) has been updated to account for the canceled classes prior to spring break.
 * **Mar 16** — There is a minor change to the grading rubric for [Assignment 3](assign/assign03.html). Also, the due date has been moved to 11pm on **Monday, March 30th**.
