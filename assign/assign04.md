@@ -5,6 +5,8 @@ title: "Assignment 4: Image processing with plugins"
 
 Due: Wednesday, April 8th by 11pm
 
+*Update 3/27* — the starter code zipfile [csf\_assign04.zip](csf_assign04.zip) has been updated to fix an invalid `pnglite.c` file
+
 # Image processing with plugins
 
 In this assignment you will use *dynamic loading* to implement an image-processing application supporting *plugins* to allow the program to support arbitrary image transformation algorithms.
