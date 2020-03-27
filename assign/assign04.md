@@ -213,7 +213,7 @@ gcc -o plugins/swapbg.so -shared swapbg.o
 
 The transformations performed by each plugin are described below.  Each transformation is applied to the following source image from [placekitten.com](http://placekitten.com/) (click for full size):
 
-> <a href="img/kitten.png"><img alt="kitten" src="img/kitten.png" style="width:400px;"></a>
+> <a href="img/kitten.png"><img alt="kitten" src="img/kitten.png" style="width:320px;"></a>
 
 (Image by [latch.r](https://flickr.com/photos/lachlanrogers/), [some rights reserved](https://creativecommons.org/licenses/by-sa/2.0/))
 
@@ -221,7 +221,7 @@ The transformations performed by each plugin are described below.  Each transfor
 
 The `swapbg` plugin, which is provided in the starter code, performs a very simple transformation by swapping the blue and green color values of each pixel.  It does not take any command line parameters.  Example result (click for full-size):
 
-> <a href="img/kitten_swapbg.png"><img alt="kitten b/g swap" src="img/kitten_swapbg.png" style="width:400px;"></a>
+> <a href="img/kitten_swapbg.png"><img alt="kitten b/g swap" src="img/kitten_swapbg.png" style="width:320px;"></a>
 
 Note that as a result of the transformation, the kitten's brownish fur turned magenta.
 
@@ -229,13 +229,13 @@ Note that as a result of the transformation, the kitten's brownish fur turned ma
 
 The `mirrorh` plugin generates a mirror image of the input image, with all pixels being reflected horizontally.  It does not take any command line parameters.  Example result (click for full-size):
 
-> <a href="img/kitten_mirrorh.png"><img alt="kitten mirrored horizontally" src="img/kitten_mirrorh.png" style="width:400px;"></a>
+> <a href="img/kitten_mirrorh.png"><img alt="kitten mirrored horizontally" src="img/kitten_mirrorh.png" style="width:320px;"></a>
 
 ### `mirrorv` plugin
 
 The `mirrorv` plugin generates a mirror image of the input image, with all pixels being reflected vertically. It does not take any command line parameters.  Example result (click for full-size):
 
-> <a href="img/kitten_mirrorv.png"><img alt="kitten mirrored vertically" src="img/kitten_mirrorv.png" style="width:400px;"></a>
+> <a href="img/kitten_mirrorv.png"><img alt="kitten mirrored vertically" src="img/kitten_mirrorv.png" style="width:320px;"></a>
 
 ### `tile` plugin
 
@@ -245,7 +245,7 @@ Example result images (click for full-size):
 
 > *N* = 2 | *N* = 3
 > ------- | -------
-> <a href="img/kitten_tile_2.png"><img alt="kitten tiled 2x2" src="img/kitten_tile_2.png" style="width:400px;"></a> | <a href="img/kitten_tile_3.png"><img alt="kitten tiled 3x3" src="img/kitten_tile_3.png" style="width:400px;"></a>
+> <a href="img/kitten_tile_2.png"><img alt="kitten tiled 2x2" src="img/kitten_tile_2.png" style="width:320px;"></a> | <a href="img/kitten_tile_3.png"><img alt="kitten tiled 3x3" src="img/kitten_tile_3.png" style="width:320px;"></a>
 
 Note that when the image's width or height isn't evenly divisible by *N*, the excess should be spread out, starting with the leftmost tiles (for excess width) and topmost tiles (for excess height).  For example, in the 3 x 3 case for an 800x600 source image, the tile widths should be 267, 267, and 266, and the tile heights should be 200, 200, and 200.
 
@@ -259,7 +259,7 @@ Example result images (click for full-size):
 
 > Factor = 0.5 | Factor = 2.0
 > ------------ | ------------
-> <a href="img/kitten_exp_0.5.png"><img alt="kitten exposed 0.5" src="img/kitten_exp_0.5.png" style="width:400px;"></a> | <a href="img/kitten_exp_2.0.png"><img alt="kitten exposed 2.0" src="img/kitten_exp_2.0.png" style="width:400px;"></a>
+> <a href="img/kitten_exp_0.5.png"><img alt="kitten exposed 0.5" src="img/kitten_exp_0.5.png" style="width:320px;"></a> | <a href="img/kitten_exp_2.0.png"><img alt="kitten exposed 2.0" src="img/kitten_exp_2.0.png" style="width:320px;"></a>
 
 # Packaging and submitting
 
