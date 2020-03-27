@@ -200,7 +200,7 @@ There are detailed header comments in `image_plugin.h` explaining how these func
 
 * The `get_plugin_name` function returns the name of the plugin as a NUL-terminated character string
 * The `get_plugin_desc` function returns a brief description of the plugin as a NUL-terminated character string
-* The `parse_arguments` function requests that the plugin parse its portion of the command-line arguments; if the arguments are valid, it returns a pointer to an object containing the parsed argument data
+* The `parse_arguments` function requests that the plugin parse its portion of the command-line arguments; if the arguments are valid, it returns a pointer to an object containing the parsed argument data, otherwise it should return `NULL`
 * The `transform_image` function returns a transformation of the specified source image, using the argument data object passed in as the `arg_data` parameter
 
 The `swapbg.c` source file is an implementation of a complete image-processing plugin.  You can build it using the following commands:
