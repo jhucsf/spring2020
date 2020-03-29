@@ -37,10 +37,10 @@ Week 8 (Mar 16–20) | Spring break, no class
 Week 9 (Mar 23–27) | Caches and program execution (see Piazza for slides) | 6.5 |
 &nbsp;             | Linking basics, symbols, relocations, executables, loading [slides](lectures/lecture18-public.pdf) | 7.1–7.9 |
 &nbsp;             | Dynamic linking, shared libraries, PIC, interpositioning [slides](lectures/lecture19-public.pdf), [dynload.zip (example code)](lectures/dynload.zip) | 7.10–7.15 |
-Week 10 (Mar 30–Apr 3) | Exceptions, Processes | 8.1–8.3, 8.7
-                   | Process control | 8.4
-                   | Signals | 8.5–8.6 |
-Week 11 (Apr 6–10) | Virtual memory | 9.1–9.7
+Week 10 (Mar 30–Apr 3) | Exceptions, Processes [slides](lectures/lecture20-public.pdf) | 8.1–8.4, 8.7
+&nbsp;             | Signals [slides](lectures/lecture21-public.pdf), [signals.zip (example code)](lectures/signals.zip) | 8.5–8.6 |
+&nbsp;             | Virtual memory | 9.1–9.7
+Week 11 (Apr 6–10) | Virtual memory | 
                    | Memory mapping, Dynamic memory allocation | 9.8, 9.9, 9.11 |
                    | I/O, files, read/write | 10.1–10.5 |
 Week 12 (Apr 13–17)| File metadata, directories, sharing | 10.6–10.11
