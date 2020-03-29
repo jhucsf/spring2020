@@ -3,7 +3,7 @@ layout: default
 title: "Assignment 4: Image processing with plugins"
 ---
 
-Due: Wednesday, April 8th by 11pm
+Due: Monday, April 13th by 11pm
 
 *Update 3/27* — the starter code zipfile [csf\_assign04.zip](csf_assign04.zip) has been updated to fix an invalid `pnglite.c` file
 
