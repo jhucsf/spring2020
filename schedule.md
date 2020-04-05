@@ -41,7 +41,7 @@ Week 10 (Mar 30–Apr 3) | Exceptions, Processes: [slides](lectures/lecture20-pu
 &nbsp;             | Signals: [slides](lectures/lecture21-public.pdf), [signals.zip (example code)](lectures/signals.zip) | 8.5–8.6 |
 &nbsp;             | Virtual memory: [slides](lectures/lecture22-public.pdf) | 9.1–9.3
 Week 11 (Apr 6–10) | Memory management, address translation: [slides](lectures/lecture23-public.pdf) | 9.4–9.7
-&nbsp;             | Memory mapping, dynamic memory allocation | 9.8, 9.9, 9.11 |
+&nbsp;             | Memory mapping, dynamic memory allocation: [slides](lectures/lecture24-public.pdf) | 9.8, 9.9, 9.11 |
                    | I/O, files, read/write | 10.1–10.5 |
 Week 12 (Apr 13–17)| File metadata, directories, sharing | 10.6–10.11
                    | Networks, Internet Protocol | 11.1–11.3 |
