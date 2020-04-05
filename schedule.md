@@ -40,7 +40,7 @@ Week 9 (Mar 23–27) | Caches and program execution: see Piazza for slides | 6.5
 Week 10 (Mar 30–Apr 3) | Exceptions, Processes: [slides](lectures/lecture20-public.pdf) | 8.1–8.4, 8.7
 &nbsp;             | Signals: [slides](lectures/lecture21-public.pdf), [signals.zip (example code)](lectures/signals.zip) | 8.5–8.6 |
 &nbsp;             | Virtual memory: [slides](lectures/lecture22-public.pdf) | 9.1–9.3
-Week 11 (Apr 6–10) | Memory management, address translation | 9.4–9.7
+Week 11 (Apr 6–10) | Memory management, address translation: [slides](lectures/lecture23-public.pdf) | 9.4–9.7
 &nbsp;             | Memory mapping, dynamic memory allocation | 9.8, 9.9, 9.11 |
                    | I/O, files, read/write | 10.1–10.5 |
 Week 12 (Apr 13–17)| File metadata, directories, sharing | 10.6–10.11
