@@ -9,6 +9,8 @@ Due: Monday, April 13th by 11pm
 
 *Update 3/29* — starter code zipfile [csf\_assign04.zip](csf_assign04.zip) has been updated to include the code for the example `swapbg` image plugin
 
+*Update 4/6* — the [Error handling](#error-handling) section has been updated to indicate the required format for an error message
+
 # Image processing with plugins
 
 In this assignment you will use *dynamic loading* to implement an image-processing application supporting *plugins* to allow the program to support arbitrary image transformation algorithms.
@@ -179,6 +181,12 @@ In any situation where the driver program cannot complete sucessfully, it should
 * An image processing plugin can't be loaded
 * A required API function can't be found within a loaded plugin
 * A memory allocation error occurred
+
+*Update 4/6*: The error message printed if an error occurs should have the form
+
+> <tt>Error: <i>text of error message</i></tt>
+
+It is not important what text is printed for <tt><i>text of error mesage</i></tt>.  Error messages may be printed to either standard output or standard error.
 
 ## Image plugins
 

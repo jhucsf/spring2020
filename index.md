@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Apr 6** — [Assignment 4](assign/assign04.html) has been updated to indicate the required form for an error message.  The autograder will be updated soon to check this requirement.
 * **Mar 29** — Corrected the starter code for [Assignment 4](assign/assign04.html) to include the example `swapbg` image plugin. Also, the due date has been moved to **Monday, April 13th**.
 * **Mar 27** — A corrected version of the starter code for [Assignment 4](assign/assign04.html) has been posted.
 * **Mar 26** — [Assignment 4](assign/assign04.html) has been posted, and is due Wednesday, April 8th by 11pm.
