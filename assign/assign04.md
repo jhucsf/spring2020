@@ -188,6 +188,8 @@ In any situation where the driver program cannot complete sucessfully, it should
 
 It is not important what text is printed for <tt><i>text of error mesage</i></tt>.  Error messages may be printed to either standard output or standard error.
 
+As a special case, your driver program does *not* need to print an error message if the `imgproc` executable is invoked without any command line arguments. (It should just print the usage message in this case.)
+
 ## Image plugins
 
 An *image plugin* is a Linux shared library defining four specific API functions.  You are responsible for implementing four image plugins:
@@ -282,7 +284,7 @@ The exact name of the plugin shared libraries isn't important, but it's not a ba
 
 Your `Makefile`'s `clean` target should delete all executables and shared libraries.
 
-Submit all of the source files and header files needed by your driver program and plugin implementations, along with your `Makefile`, in a single zipfile.  For example, your command to produce the zipfile might looks like the following:
+Submit all of the source files and header files needed by your driver program and plugin implementations, along with your `Makefile`, in a single zipfile.  For example, your command to produce the zipfile might look like the following:
 
 ```
 $ zip -9r solution.zip Makefile *.c *.h
