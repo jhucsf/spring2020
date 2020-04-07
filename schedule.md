@@ -43,12 +43,12 @@ Week 10 (Mar 30–Apr 3) | Exceptions, Processes: [slides](lectures/lecture20-pu
 Week 11 (Apr 6–10) | Memory management, address translation: [slides](lectures/lecture23-public.pdf) | 9.4–9.7
 &nbsp;             | Memory mapping, dynamic memory allocation: [slides](lectures/lecture24-public.pdf) | 9.8, 9.9, 9.11 |
 &nbsp;             | Unix I/O, files: [slides](lectures/lecture25-public.pdf) | 10.1–10.11 |
-Week 12 (Apr 13–17)| Networks, Internet Protocol | 11.1–11.3 | 
+Week 12 (Apr 13–17)| Networks, Internet Protocol: [slides](lectures/lecture26-public.pdf) | 11.1–11.3 | 
+                   | Sockets, Application Protocols | 11.4 | 
                    | Network applications, HTTP | 11.4–11.6 | 
-                   | Concurrency with processes | 12.1 |
-Week 13 (Apr 20–24)| Concurrency with threads, synchronization | 12.3–12.5
+Week 13 (Apr 20–24)| Concurrency with processes | 12.1 |
+                   | Concurrency with threads, synchronization | 12.3–12.5
                    | Concurrency with I/O multiplexing | 12.2 |
-                   | Parallelism, concurrency issues | 12.6–12.7 |
-Week 14 (Apr 27–May 1) | TBD
+Week 14 (Apr 27–May 1) | Parallelism, concurrency issues | 12.6–12.7 |
                    | TBD
                    | Final exam review |
