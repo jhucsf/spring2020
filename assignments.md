@@ -24,5 +24,5 @@ Assignment | Due
 [Assignment 2: Postfix calculator](assign/assign02.html) | <strike>Wednesday, February 26</strike> Tuesday, Mar 3rd by 11pm
 [Assignment 3: Cache simulator](assign/assign03.html) | <strike>Thursday, Mar 26th</strike> Monday, Mar 30th by 11pm
 [Assignment 4: Image processing with plugins](assign/assign04.html) | Monday, Apr 13th by 11pm
-[Assignment 5](assign/assign05.html) | 
+[Assignment 5: Network calculator](assign/assign05.html) | Friday, Apr 24th by 11pm
 [Assignment 6](assign/assign06.html) | 
