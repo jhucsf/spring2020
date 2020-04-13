@@ -44,7 +44,7 @@ Week 11 (Apr 6–10) | Memory management, address translation: [slides](lectures
 &nbsp;             | Memory mapping, dynamic memory allocation: [slides](lectures/lecture24-public.pdf) | 9.8, 9.9, 9.11 |
 &nbsp;             | Unix I/O, files: [slides](lectures/lecture25-public.pdf) | 10.1–10.11 |
 Week 12 (Apr 13–17)| Networks, Internet Protocol: [slides](lectures/lecture26-public.pdf) | 11.1–11.3 | 
-                   | Sockets, Application Protocols | 11.4 | 
+&nbsp;             | Sockets, Application Protocols: [slides](lectures/lecture27-public.pdf), [sockets.zip (example code)](lectures/sockets.zip) | 11.4 | 
                    | Network applications, HTTP | 11.4–11.6 | 
 Week 13 (Apr 20–24)| Concurrency with processes | 12.1 |
                    | Concurrency with threads, synchronization | 12.3–12.5
