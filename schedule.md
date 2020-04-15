@@ -45,7 +45,7 @@ Week 11 (Apr 6–10) | Memory management, address translation: [slides](lectures
 &nbsp;             | Unix I/O, files: [slides](lectures/lecture25-public.pdf) | 10.1–10.11 |
 Week 12 (Apr 13–17)| Networks, Internet Protocol: [slides](lectures/lecture26-public.pdf) | 11.1–11.3 | 
 &nbsp;             | Sockets, Application Protocols: [slides](lectures/lecture27-public.pdf), [sockets.zip (example code)](lectures/sockets.zip) | 11.4 | 
-                   | Network applications, HTTP | 11.4–11.6 | 
+&nbsp;             | Network applications, HTTP: [slides](lectures/lecture28-public.pdf), [webserver.zip (example code)](lectures/webserver.zip), [webclient.zip (example code)](lectures/webclient.zip) | 11.4–11.6 | 
 Week 13 (Apr 20–24)| Concurrency with processes | 12.1 |
                    | Concurrency with threads, synchronization | 12.3–12.5
                    | Concurrency with I/O multiplexing | 12.2 |
