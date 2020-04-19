@@ -46,8 +46,8 @@ Week 11 (Apr 6–10) | Memory management, address translation: [slides](lectures
 Week 12 (Apr 13–17)| Networks, Internet Protocol: [slides](lectures/lecture26-public.pdf) | 11.1–11.3 | 
 &nbsp;             | Sockets, Application Protocols: [slides](lectures/lecture27-public.pdf), [sockets.zip (example code)](lectures/sockets.zip) | 11.4 | 
 &nbsp;             | Network applications, HTTP: [slides](lectures/lecture28-public.pdf), [webserver.zip (example code)](lectures/webserver.zip), [webclient.zip (example code)](lectures/webclient.zip) | 11.4–11.6 | 
-Week 13 (Apr 20–24)| Concurrency with processes | 12.1 |
-                   | Concurrency with threads, synchronization | 12.3–12.5
+Week 13 (Apr 20–24)| Concurrency with processes: [slides](lectures/lecture29-public.pdf), [mp\_webserver.zip (example code)](lectures/mp_webserver.zip) | 12.1 |
+&nbsp;             | Concurrency with threads, synchronization: [slides](lectures/lecture30-public.pdf), [mt\_webserver.zip (example code)](lectures/mt_webserver.zip), [mandelbrot.zip (example code)](lectures/mandelbrot.zip) | 12.3–12.5
                    | Concurrency with I/O multiplexing | 12.2 |
 Week 14 (Apr 27–May 1) | Parallelism, concurrency issues | 12.6–12.7 |
                    | TBD
