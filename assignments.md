@@ -25,4 +25,4 @@ Assignment | Due
 [Assignment 3: Cache simulator](assign/assign03.html) | <strike>Thursday, Mar 26th</strike> Monday, Mar 30th by 11pm
 [Assignment 4: Image processing with plugins](assign/assign04.html) | Monday, Apr 13th by 11pm
 [Assignment 5: Network calculator](assign/assign05.html) | Friday, Apr 24th by 11pm
-[Assignment 6](assign/assign06.html) | 
+[Assignment 6: Multithreaded network calculator](assign/assign06.html) | Friday, May 1st by 11pm
