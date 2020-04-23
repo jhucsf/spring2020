@@ -244,9 +244,9 @@ This test tests that two client sessions can interact with each other through co
 cat final_count.txt
 ```
 
-The file `final_count.txt` does not need to contain any specific value, but it will probably be somewhere between 100000 and 200000.
+The file `final_count.txt` does not need to contain any specific value, but it will probably be somewhere between 200000 and 400000.
 
-If you fully synchronized `calc_eval`, such that each expression is fully evaluated with the mutex held, the final count should be 200000.
+If you fully synchronized `calc_eval`, such that each expression is fully evaluated with the mutex held, the final count should be 400000.
 
 The most important outcome of this test is that your server should not crash.
 
