@@ -5,6 +5,8 @@ title: "Assignment 6: Multithreaded network calculator"
 
 **Due by:** Friday, May 1st by 11pm
 
+*Update 4/23* — adjustments to grading rubric
+
 ## Overview
 
 In this assignment you will make your `calcServer` program from [Assignment 5](assign05.html)
@@ -25,9 +27,8 @@ The goals of the assignment are:
 
 Your grade will be determined as follows:
 
-* Using threads to handle concurrent client connections: 45%
-* Using synchronization to protect shared data: 25%
-* `README.txt` explaining the approach to thread synchronization: 10%
+* Autograder tests of concurrent client connections: 65%
+* `README.txt`, manual review of synchronization: 15%
 * Design: 10%
 * Coding style: 10%
 

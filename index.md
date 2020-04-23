@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **Apr 23** — The description of [Assignment 6](assign/assign06.html) was updated with minor revisions to the grading rubric.
 * **Apr 22** — [Assignment 6](assign/assign06.html) (the last assignment!) has been posted, due **Friday, May 1st** by 11pm.
 * **Apr 7** — [Assignment 5](assign/assign05.html) has been posted, due **Friday, April 24th** by 11pm.
 * **Apr 6** — [Assignment 4](assign/assign04.html) has been updated to indicate the required form for an error message.  The autograder will be updated soon to check this requirement.
