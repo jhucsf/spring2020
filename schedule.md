@@ -49,6 +49,6 @@ Week 12 (Apr 13–17)| Networks, Internet Protocol: [slides](lectures/lecture26-
 Week 13 (Apr 20–24)| Concurrency with processes: [slides](lectures/lecture29-public.pdf), [mp\_webserver.zip (example code)](lectures/mp_webserver.zip) | 12.1 |
 &nbsp;             | Concurrency with threads: [slides](lectures/lecture30-public.pdf), [mt\_webserver.zip (example code)](lectures/mt_webserver.zip), [mandelbrot.zip (example code)](lectures/mandelbrot.zip) | 12.3
 &nbsp;             | Thread synchronization: [slides](lectures/lecture31-public.pdf), [synch.zip (example code)](lectures/synch.zip) | 12.4–12.5
-Week 14 (Apr 27–May 1) | Concurrency with I/O multiplexing | 12.2 |
-                   | Parallelism, concurrency issues | 12.6–12.7 |
+Week 14 (Apr 27–May 1) | Concurrency with I/O multiplexing: [slides](lectures/lecture32-public.pdf), [iomux.zip (example code)](lectures/iomux.zip) | 12.2 |
+&nbsp;             | Parallelism, concurrency issues: [slides](lectures/lecture33-public.pdf), [synch2.zip (example code)](lectures/synch2.zip) | 12.6–12.7 |
                    | Final exam review |
