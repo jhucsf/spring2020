@@ -19,6 +19,7 @@ Use the links above to navigate the site.  The [Syllabus](syllabus.html) describ
 
 ## News
 
+* **May 1** — A [solution to the practice final exam](exercise/final-fall2019-soln.pdf) is available.
 * **Apr 28** — The [Fall 2019 final exam](exercise/final-fall2019.pdf) is available for review.
 * **Apr 23** — The description of [Assignment 6](assign/assign06.html) was updated with minor revisions to the grading rubric.
 * **Apr 22** — [Assignment 6](assign/assign06.html) (the last assignment!) has been posted, due **Friday, May 1st** by 11pm.
